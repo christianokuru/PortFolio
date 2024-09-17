@@ -3,7 +3,8 @@
 import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {Darkmode} from "./Darkmode";
+import { Darkmode } from "./Darkmode";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -17,16 +18,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="container max-w-screen-2xl mx-auto text-2xl flex items-center justify-between py-3 border-b border-l-border">
-      <Link href="/" className="text-3xl font-semibold text-primary font-[family-name:var(--font-geist-mono)]">
+    <nav className="px-4 lg:container lg:max-w-screen-2xl lg:mx-auto lg:text-2xl flex items-center lg:justify-between py-3 border-b border-l-border">
+      <Link href="/" className="text-3xl font-semibold text-primary">
         Okuru<span className="text-purple-800 text-xl">.</span>
       </Link>
-      <div className="flex gap-x-10 text-base text-gray-600 items-center font-[family-name:var(--font-geist-mono)]">
+      <div className="hidden lg:flex lg:gap-x-10 lg:text-base lg:text-gray-600 lg:items-center">
         {navLinks.map((link, index) => (
           <div key={index}>
             {pathname === link.href ? (
               <Link
-                className="font-semibold text-primary border-b-[3px] border-primary rounded-md px-3"
+                className="lg:font-semibold lg:text-primary lg:border-b-[3px] lg:border-primary lg:rounded-md px-3"
                 href={link.href}
               >
                 {link.name}
@@ -41,10 +42,16 @@ export default function Navbar() {
             )}
           </div>
         ))}
-        <Button className="">
+        <Button className="hidden lg:block">
           <Link href="/contact">Hire me</Link>
         </Button>
+        <div className="">
+          <Darkmode />
+        </div>
+      </div>
+      <div className="lg:hidden flex items-center w-full justify-end gap-x-6">
         <Darkmode />
+        <HamburgerMenuIcon className="w-10 h-9 text-gray-500 hover:text-primary lg:hidden"/>
       </div>
     </nav>
   );
