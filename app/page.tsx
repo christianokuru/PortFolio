@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <>
       {/* <Blob /> */}
-      <div className="pt-8 px-5 flex-col lg:pt-[150px] pb-3 text-center mx-auto border-b rounded-xl border-border max-w-5xl">
+      <div className="pt-8 px-5 flex-col lg:pt-[130px] pb-3 text-center mx-auto border-b rounded-xl border-border max-w-5xl">
         <div className="flex-col">
-          <h1 className="text-muted-foreground pb-2">Front-End Developer</h1>
-          <h1 className="font-bold text-primary text-6xl pb-4">
+          <h1 className="text-muted-foreground pb-2 lg:pb-1">Front-End Developer</h1>
+          <h1 className="font-bold text-primary text-6xl pb-2">
             Okuru Christian
           </h1>
-          <p className="text-muted-foreground lg:text-xl">
+          <p className="text-muted-foreground lg:text-xl lg:py-2">
             Christian is a passionate front-end developer skilled in building
             modern, interactive web applications. With expertise in React,
             Tailwind CSS, Framer Motion, and Next.js, I create sleek,
@@ -26,12 +26,12 @@ export default function Home() {
           </p>
         </div>
         {/* All the buttons */}
-        <div className=" flex flex-col lg:gap-x-4 lg:pt-2 lg:flex lg:flex-row lg:justify-center lg:items-center ">
-          <div className="py-6">
+        <div className=" flex flex-col lg:gap-x-4 lg:pt-5 lg:flex lg:flex-row lg:justify-center">
+          <div className="py-6 lg:py-0 md:py-9 lg:mr-7">
             <Button>Download CV</Button>
           </div>
           {/* social media icons */}
-          <div className="flex gap-x-5 items-center justify-center pb-6">
+          <div className="flex gap-x-6 items-center justify-center pb-5 lg:gap-x-8 md:gap-x-10">
             {socialLinks.map(({ link, icon }, index) => (
               <div key={index}>
                 <Link href={link} target="_blank" rel="noopener noreferrer">
@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </div>
         {/* My metrics */}
-        <div className="flex justify-between px-3">
+        <div className="hidden md:justify-between md:px-3 md:flex md:py-5">
           <div className="flex">
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
@@ -71,6 +71,43 @@ export default function Home() {
             <h1 className="text-5xl font-semibold">17</h1>
             <div className="flex items-center">
               <p className="text-sm">Code Commits.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* mobile */}
+        <div className="flex justify-between mb-3 border border-border rounded-xl p-5 mt-10 md:hidden">
+          <div className="flex">
+            <h1 className="text-5xl font-semibold">2</h1>
+            <div className="flex items-center">
+              <p className="text-sm text-muted-foreground">Years of Exp.</p>
+            </div>
+          </div>
+
+          <div className="flex">
+            <h1 className="text-5xl font-semibold">2</h1>
+            <div className="flex items-center">
+              <p className="text-sm text-muted-foreground">
+                Projects Completed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex pt-5 border border-border justify-between rounded-xl p-5 md:hidden">
+          <div className="flex">
+            <h1 className="text-5xl font-semibold">4</h1>
+            <div className="flex items-center">
+              <p className="text-sm text-muted-foreground">
+                Technologies Mastered.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex">
+            <h1 className="text-5xl font-semibold">17</h1>
+            <div className="flex items-center">
+              <p className="text-sm text-muted-foreground">Code Commits.</p>
             </div>
           </div>
         </div>
