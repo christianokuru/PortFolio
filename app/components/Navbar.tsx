@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Mobile menu */}
-      <div className={`lg:hidden ${isOpen ? "block" : "hidden"}`}>
+      <div className={`lg:hidden transition-all duration-1000 ease-in-out transform ${isOpen ? "opacity-100 max-h-[300px]" : "opacity-0 max-h-0"} overflow-hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
           {navLinks.map((item) => (
             <Link

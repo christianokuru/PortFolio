@@ -13,7 +13,9 @@ export default function Home() {
       {/* <Blob /> */}
       <div className="pt-8 px-5 flex-col lg:pt-[130px] pb-3 text-center mx-auto border-b rounded-xl border-border max-w-5xl">
         <div className="flex-col">
-          <h1 className="text-muted-foreground pb-2 lg:pb-1">Front-End Developer</h1>
+          <h1 className="text-muted-foreground pb-2 lg:pb-1">
+            Front-End Developer
+          </h1>
           <h1 className="font-bold text-primary text-6xl pb-2">
             Okuru Christian
           </h1>
@@ -28,7 +30,9 @@ export default function Home() {
         {/* All the buttons */}
         <div className=" flex flex-col lg:gap-x-4 lg:pt-5 lg:flex lg:flex-row lg:justify-center">
           <div className="py-6 lg:py-0 md:py-9 lg:mr-7">
-            <Button>Download CV</Button>
+            <a href="/FRONT-END INTERNSHIP CV.pdf" download>
+              <Button>Download CV</Button>
+            </a>
           </div>
           {/* social media icons */}
           <div className="flex gap-x-6 items-center justify-center pb-5 lg:gap-x-8 md:gap-x-10">
