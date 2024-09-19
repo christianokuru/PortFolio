@@ -2,12 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  ChevronDownCircleIcon,
-  MailIcon,
-  MapPin,
-  PhoneCallIcon,
-} from "lucide-react";
+import { MailIcon, MapPin, PhoneCallIcon } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 export default function Contact() {
@@ -17,11 +12,11 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
-    service: "Select a service",
+    countryCode: "+234", // Default country code
   });
   const [emailError, setEmailError] = useState("");
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [submitStatus, setSubmitStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // State to handle loading
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -47,6 +42,9 @@ export default function Contact() {
       setSubmitStatus("Please correct the errors before submitting.");
       return;
     }
+    setIsLoading(true); // Set loading to true
+    setSubmitStatus(""); // Clear previous status
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -56,27 +54,28 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        setSubmitStatus("Message sent successfully!");
-        // Reset form after successful submission
+        setSubmitStatus("Message sent successfully!😁");
         setFormData({
           name: "",
           lastName: "",
           email: "",
           phone: "",
           message: "",
-          service: "Select a service",
+          countryCode: "+234", // Reset to default country code
         });
       } else {
-        setSubmitStatus("Failed to send message. Please try again.");
+        setSubmitStatus("Failed to send message. Please try again.🥺");
       }
     } catch (error) {
-      setSubmitStatus("An error occurred. Please try again later.");
+      setSubmitStatus("An error occurred. Please try again later.🥺");
+    } finally {
+      setIsLoading(false); // Set loading to false
     }
   };
 
   return (
-    <div className="px-3">
-      <div className="flex flex-col gap-y-5">
+    <div className="px-3 lg:flex lg:justify-around lg:pt-6">
+      <div className="flex flex-col gap-y-5 lg:justify-center">
         {/* Phone number */}
         <div className="flex items-center py-3 pl-3">
           <PhoneCallIcon className="h-10 w-7 mr-5 text-green-600" />
@@ -146,24 +145,34 @@ export default function Contact() {
               value={formData.phone}
               onChange={handleInputChange}
               required
+              type="tel" // Ensure input is numeric
+              pattern="[0-9]*" // Allow only numeric characters
             />
-          </div>
-          {/* Dropdown menu */}
-          <div className="relative">
-            <select
-              className="w-full bg-input p-3 rounded-xl appearance-none"
-              name="service"
-              value={formData.service}
+            <textarea
+              className="bg-input p-3 rounded-xl h-60"
+              placeholder="Please type your Message..."
+              name="message"
+              value={formData.message}
               onChange={handleInputChange}
               required
-            >
-              <option value="Select a service">Select a Service</option>
-              <option value="Front-End Development">Front-End Development</option>
-            </select>
-            <ChevronDownCircleIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            />
           </div>
-          <Button type="submit">Send Message</Button>
+
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? "Sending..." : "Send Message"}
+          </Button>
         </form>
+        {submitStatus && (
+          <p
+            className={`mt-4 ${
+              submitStatus.startsWith("Failed")
+                ? "text-red-500"
+                : "text-green-500"
+            }`}
+          >
+            {submitStatus}
+          </p>
+        )}
       </div>
     </div>
   );
