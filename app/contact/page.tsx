@@ -81,7 +81,7 @@ export default function Contact() {
           <PhoneCallIcon className="h-10 w-7 mr-5 text-green-600" />
           <div className="flex flex-col">
             <p className="text-muted-foreground">Phone</p>
-            <p>+234-9059952426</p>
+            <p className="leading-7 [&:not(:first-child)]:mt-2">+234-9059952426</p>
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export default function Contact() {
           <MailIcon className="h-10 w-7 mr-5 text-pink-600" />
           <div className="flex flex-col">
             <p className="text-muted-foreground">Email</p>
-            <p>okuruchristian@gmail.com</p>
+            <p className="leading-7 [&:not(:first-child)]:mt-2">okuruchristian@gmail.com</p>
           </div>
         </div>
 
@@ -99,20 +99,20 @@ export default function Contact() {
           <MapPin className="h-10 w-10 mr-5 text-purple-600" />
           <div className="flex flex-col">
             <p className="text-muted-foreground">Address</p>
-            <p>#21 Pipeline Road, Baruwa, Gate Bus Stop. Ipaja, Lagos.</p>
+            <p className="leading-7 [&:not(:first-child)]:mt-2">#21 Pipeline Road, Baruwa, Gate Bus Stop. Ipaja, Lagos.</p>
           </div>
         </div>
       </div>
 
       {/* Form */}
-      <div className="p-6 border-2 rounded-lg my-5">
+      <div className="p-6 border-2 rounded-xl bg-card text-card-foreground my-5">
         <div>
-          <h1 className="font-bold text-3xl mb-4">Let's work together!</h1>
+          <h1 className="font-bold text-3xl leading-tight mb-4">Let's work together!</h1>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <input
-              className="bg-border p-3 rounded-xl"
+              className="p-3 rounded-xl bg-input"
               placeholder="First Name"
               name="name"
               value={formData.name}
@@ -120,7 +120,7 @@ export default function Contact() {
               required
             />
             <input
-              className="bg-border p-3 rounded-xl"
+              className="bg-input p-3 rounded-xl"
               placeholder="Last Name"
               name="lastName"
               value={formData.lastName}
@@ -130,7 +130,7 @@ export default function Contact() {
           </div>
           <div className="grid grid-cols-1 space-y-4">
             <input
-              className="bg-border p-3 rounded-xl"
+              className="bg-input p-3 rounded-xl"
               placeholder="Email"
               name="email"
               type="email"

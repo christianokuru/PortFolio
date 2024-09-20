@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       {/* <Blob /> */}
-      <div className="pt-8 px-5 flex-col lg:pt-[130px] pb-3 text-center mx-auto border-b rounded-xl border-border max-w-5xl">
+      <div className="pt-8 px-5 flex-col lg:pt-[130px] pb-3 text-center mx-auto border-b shadow rounded-xl border-border max-w-5xl">
         <div className="flex-col">
           <h1 className="text-muted-foreground pb-2 lg:pb-1">
             Front-End Developer
@@ -19,7 +19,7 @@ export default function Home() {
           <h1 className="font-bold text-primary text-6xl pb-2">
             Okuru Christian
           </h1>
-          <p className="text-muted-foreground lg:text-xl lg:py-2">
+          <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2">
             Christian is a passionate front-end developer skilled in building
             modern, interactive web applications. With expertise in React,
             Tailwind CSS, Framer Motion, and Next.js, I create sleek,
@@ -49,30 +49,30 @@ export default function Home() {
           </div>
         </div>
         {/* My metrics */}
-        <div className="hidden md:justify-between md:px-3 md:flex md:py-5">
+        <div className="hidden md:justify-between md:px-3 md:flex md:py-8">
           <div className="flex">
-            <h1 className="text-5xl font-semibold">2</h1>
+            <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
               <p className="text-sm">Years of Exp.</p>
             </div>
           </div>
 
           <div className="flex">
-            <h1 className="text-5xl font-semibold">2</h1>
+            <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
               <p className="text-sm">Projects Completed.</p>
             </div>
           </div>
 
           <div className="flex">
-            <h1 className="text-5xl font-semibold">4</h1>
+            <h1 className="text-5xl font-semibold text-foreground">4</h1>
             <div className="flex items-center">
               <p className="text-sm">Technologies Mastered.</p>
             </div>
           </div>
 
           <div className="flex">
-            <h1 className="text-5xl font-semibold">17</h1>
+            <h1 className="text-5xl font-semibold text-foreground">17</h1>
             <div className="flex items-center">
               <p className="text-sm">Code Commits.</p>
             </div>
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* mobile */}
-        <div className="flex justify-between mb-3 border border-border rounded-xl p-5 mt-10 md:hidden">
+        <div className="flex justify-between mb-3 border border-accent rounded-xl p-5 mt-10 md:hidden">
           <div className="flex">
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
@@ -98,7 +98,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex pt-5 border border-border justify-between rounded-xl p-5 md:hidden">
+        <div className="flex pt-5 border border-accent justify-between rounded-xl p-5 md:hidden">
           <div className="flex">
             <h1 className="text-5xl font-semibold">4</h1>
             <div className="flex items-center">

@@ -11,8 +11,7 @@ import { X } from "lucide-react";
 // Creating an array of objects that contain the links in the navbar
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "About", href: "/resume" },
+  { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
@@ -69,7 +68,11 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Mobile menu */}
-      <div className={`lg:hidden transition-all duration-1000 ease-in-out transform ${isOpen ? "opacity-100 max-h-[300px]" : "opacity-0 max-h-0"} overflow-hidden`}>
+      <div
+        className={`lg:hidden transition-all duration-1000 ease-in-out transform ${
+          isOpen ? "opacity-100 max-h-[300px] shadow-lg" : "opacity-0 max-h-0"
+        } overflow-hidden`}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
           {navLinks.map((item) => (
             <Link
@@ -78,7 +81,7 @@ export default function Navbar() {
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 pathname === item.href
                   ? "text-white bg-primary"
-                  : "text-gray-500 hover:text-white hover:bg-border"
+                  : "text-primary hover:text-white hover:bg-primary"
               }`}
               onClick={toggleMenu}
             >
