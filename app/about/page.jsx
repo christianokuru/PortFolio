@@ -86,7 +86,7 @@ export default function About() {
         With a focus on front-end development, I approach every project with
         precision, creativity, and a problem-solving mindset. My passion for
         building intuitive, high-performance interfaces ensures that your vision
-        comes to life seamlessly and efficiently. Let's collaborate to turn your
+        comes to life seamlessly and efficiently. Let us collaborate to turn your
         ideas into impactful digital experiences.
       </p>
 
