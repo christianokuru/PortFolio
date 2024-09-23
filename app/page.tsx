@@ -7,6 +7,8 @@ import Link from "next/link";
 import Blob from "./components/Blob";
 import socialLinks from "@/app/components/iconLinks";
 
+const commits = { commit: "31" };
+
 export default function Home() {
   return (
     <>
@@ -20,7 +22,11 @@ export default function Home() {
             Okuru Christian
           </h1>
           <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2">
-          I am a passionate front-end developer skilled in building modern, interactive web applications. With expertise in React, Tailwind CSS, Framer Motion, and Next.js, I create sleek, responsive, and highly dynamic user interfaces. Let's turn ideas into engaging digital experiences!
+            I am a passionate front-end developer skilled in building modern,
+            interactive web applications. With expertise in React, Tailwind CSS,
+            Framer Motion, and Next.js, I create sleek, responsive, and highly
+            dynamic user interfaces. Let's turn ideas into engaging digital
+            experiences!
           </p>
         </div>
         {/* All the buttons */}
@@ -56,19 +62,25 @@ export default function Home() {
           <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">Projects Completed.</p>
+              <p className="text-sm text-muted-foreground">
+                Projects Completed.
+              </p>
             </div>
           </div>
 
           <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">4</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">Technologies Mastered.</p>
+              <p className="text-sm text-muted-foreground">
+                Technologies Mastered.
+              </p>
             </div>
           </div>
 
           <div className="flex space-x-2">
-            <h1 className="text-5xl font-semibold text-foreground">17</h1>
+            <h1 className="text-5xl font-semibold text-foreground">
+              {commits.commit}
+            </h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground">Code Commits.</p>
             </div>
@@ -80,7 +92,9 @@ export default function Home() {
           <div className="flex">
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground pl-3">Years of Exp.</p>
+              <p className="text-sm text-muted-foreground pl-3">
+                Years of Exp.
+              </p>
             </div>
           </div>
 
@@ -105,9 +119,11 @@ export default function Home() {
           </div>
 
           <div className="flex">
-            <h1 className="text-5xl font-semibold">17</h1>
+            <h1 className="text-5xl font-semibold">{commits.commit}</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground pl-3">Code Commits.</p>
+              <p className="text-sm text-muted-foreground pl-3">
+                Code Commits.
+              </p>
             </div>
           </div>
         </div>
@@ -115,6 +131,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
