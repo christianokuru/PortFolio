@@ -20,11 +20,7 @@ export default function Home() {
             Okuru Christian
           </h1>
           <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2">
-            Christian is a passionate front-end developer skilled in building
-            modern, interactive web applications. With expertise in React,
-            Tailwind CSS, Framer Motion, and Next.js, I create sleek,
-            responsive, and highly dynamic user interfaces. Let's turn ideas
-            into engaging digital experiences!
+          I am a passionate front-end developer skilled in building modern, interactive web applications. With expertise in React, Tailwind CSS, Framer Motion, and Next.js, I create sleek, responsive, and highly dynamic user interfaces. Let's turn ideas into engaging digital experiences!
           </p>
         </div>
         {/* All the buttons */}
@@ -50,31 +46,31 @@ export default function Home() {
         </div>
         {/* My metrics */}
         <div className="hidden md:justify-between md:px-3 md:flex md:py-8">
-          <div className="flex">
+          <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
-              <p className="text-sm">Years of Exp.</p>
+              <p className="text-sm text-muted-foreground">Years of Exp.</p>
             </div>
           </div>
 
-          <div className="flex">
+          <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
-              <p className="text-sm">Projects Completed.</p>
+              <p className="text-sm text-muted-foreground">Projects Completed.</p>
             </div>
           </div>
 
-          <div className="flex">
+          <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">4</h1>
             <div className="flex items-center">
-              <p className="text-sm">Technologies Mastered.</p>
+              <p className="text-sm text-muted-foreground">Technologies Mastered.</p>
             </div>
           </div>
 
-          <div className="flex">
+          <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">17</h1>
             <div className="flex items-center">
-              <p className="text-sm">Code Commits.</p>
+              <p className="text-sm text-muted-foreground">Code Commits.</p>
             </div>
           </div>
         </div>
@@ -84,26 +80,26 @@ export default function Home() {
           <div className="flex">
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">Years of Exp.</p>
+              <p className="text-sm text-muted-foreground pl-3">Years of Exp.</p>
             </div>
           </div>
 
           <div className="flex">
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground pl-3">
                 Projects Completed.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="flex pt-5 border border-accent justify-between rounded-xl p-5 md:hidden">
+        <div className="flex space-x-12 space-between border border-accent rounded-xl p-5 md:hidden">
           <div className="flex">
             <h1 className="text-5xl font-semibold">4</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">
-                Technologies Mastered.
+              <p className="text-sm text-muted-foreground pl-3">
+                Technologies<br></br>Mastered.
               </p>
             </div>
           </div>
@@ -111,7 +107,7 @@ export default function Home() {
           <div className="flex">
             <h1 className="text-5xl font-semibold">17</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">Code Commits.</p>
+              <p className="text-sm text-muted-foreground pl-3">Code Commits.</p>
             </div>
           </div>
         </div>
