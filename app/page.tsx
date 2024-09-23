@@ -102,7 +102,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
-                Projects Completed.
+                Projects<br></br> Completed.
               </p>
             </div>
           </div>
