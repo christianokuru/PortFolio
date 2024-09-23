@@ -32,7 +32,7 @@ export default function Home() {
         {/* All the buttons */}
         <div className=" flex flex-col lg:gap-x-4 lg:pt-5 lg:flex lg:flex-row lg:justify-center">
           <div className="py-6 lg:py-0 md:py-9 lg:mr-7">
-            <a href="/FRONT-END INTERNSHIP CV.pdf" download>
+            <a href="/Okuru-frontend-dev-cv.pdf.pdf" download>
               <Button>Download CV</Button>
             </a>
           </div>
