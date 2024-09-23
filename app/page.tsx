@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex space-x-12 space-between border border-accent rounded-xl p-5 md:hidden">
+        <div className="flex space-x-5 space-between border border-accent rounded-xl p-5 md:hidden">
           <div className="flex">
             <h1 className="text-5xl font-semibold">4</h1>
             <div className="flex items-center">
