@@ -116,5 +116,5 @@ export default function Home() {
   );
 }
 
-// lg:flex flex-col lg:items-center lg:gap-x-6 lg:py-9 lg:justify-center
-// flex gap-x-6 items-center justify-center pb-6 border border-border
+
+
