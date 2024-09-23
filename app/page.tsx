@@ -55,7 +55,7 @@ export default function Home() {
           <div className="flex space-x-2">
             <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">Years of Exp.</p>
+              <p className="text-sm text-muted-foreground">Years of Exp</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold text-foreground">2</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground">
-                Projects Completed.
+                Projects Completed
               </p>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold text-foreground">4</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground">
-                Technologies Mastered.
+                Technologies Mastered
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
               {commits.commit}
             </h1>
             <div className="flex items-center">
-              <p className="text-sm text-muted-foreground">Code Commits.</p>
+              <p className="text-sm text-muted-foreground">Code Commits</p>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
-                Years of Exp.
+                Years of Exp
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold">2</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
-                Projects<br></br> Completed.
+                Projects<br></br> Completed
               </p>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold">4</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
-                Technologies<br></br>Mastered.
+                Technologies<br></br>Mastered
               </p>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function Home() {
             <h1 className="text-5xl font-semibold">{commits.commit}</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
-                Code Commits.
+                Code Commits
               </p>
             </div>
           </div>
