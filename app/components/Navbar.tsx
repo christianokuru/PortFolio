@@ -5,10 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Darkmode } from "./Darkmode";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-// Creating an array of objects that contain the links in the navbar
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -18,15 +17,25 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <>
-      <nav className="px-4 lg:container lg:max-w-screen-2xl lg:mx-auto lg:text-2xl flex items-center lg:justify-between py-3 border-b border-l-border">
-        <Link href="/" className="text-3xl font-semibold text-primary">
+      <nav className="px-4 lg:container lg:max-w-screen-2xl lg:mx-auto lg:text-2xl flex items-center lg:sticky lg:top-0 lg:backdrop-blur-lg lg:z-50 lg:justify-between py-3 border-b border-l-border">
+        <Link href="/" className="text-3xl font-semibold text-primary" aria-label="Homepage">
           Okuru<span className="text-purple-800 text-xl">.</span>
         </Link>
         <div className="hidden lg:flex lg:gap-x-10 lg:text-base lg:text-gray-600 lg:items-center">
@@ -36,6 +45,7 @@ export default function Navbar() {
                 <Link
                   className="lg:font-semibold lg:text-primary lg:border-b-[3px] lg:border-primary lg:rounded-md px-3"
                   href={link.href}
+                  aria-label={`${link.name} page`}
                 >
                   {link.name}
                 </Link>
@@ -43,6 +53,7 @@ export default function Navbar() {
                 <Link
                   className="font-semibold text-gray-500 transition duration-100 hover:text-primary"
                   href={link.href}
+                  aria-label={`${link.name} page`}
                 >
                   {link.name}
                 </Link>
@@ -58,7 +69,7 @@ export default function Navbar() {
         </div>
         <div className="lg:hidden flex items-center w-full justify-end gap-x-6">
           <Darkmode />
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} aria-label="Toggle menu">
             {isOpen ? (
               <X className="h-8 w-10 text-gray-600 border rounded-xl hover:text-primary hover:border-primary" />
             ) : (
@@ -67,9 +78,10 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
       {/* Mobile menu */}
       <div
-        className={`lg:hidden transition-all duration-1000 ease-in-out transform ${
+        className={`lg:hidden transition-all duration-700 ease-in-out transform ${
           isOpen ? "opacity-100 max-h-[300px] shadow-lg" : "opacity-0 max-h-0"
         } overflow-hidden`}
       >
@@ -84,6 +96,7 @@ export default function Navbar() {
                   : "text-primary hover:text-white hover:bg-primary"
               }`}
               onClick={toggleMenu}
+              aria-label={`${item.name} page`}
             >
               {item.name}
             </Link>
