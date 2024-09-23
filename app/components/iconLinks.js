@@ -14,14 +14,14 @@ const socialLinks = [
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com",
+      link: "https://linkedin.com/in/okuru-christian",
       icon: (
         <LinkedInLogoIcon width={30} height={24} className="text-blue-700" />
       ),
     },
     {
       name: "Twitter",
-      link: "https://twitter.com",
+      link: "https://x.com/arts_from_khris?t=vXyyI7yV7kN29e03emOEsQ&s=08",
       icon: <TwitterIcon size={30} className="text-purple-700" />,
     },
     {
