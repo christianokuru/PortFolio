@@ -69,7 +69,7 @@ export default function Home() {
           </div>
 
           <div className="flex space-x-2">
-            <h1 className="text-5xl font-semibold text-foreground">4</h1>
+            <h1 className="text-5xl font-semibold text-foreground">5</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground">
                 Technologies Mastered
