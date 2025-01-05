@@ -7,7 +7,7 @@ import Link from "next/link";
 import Blob from "./components/Blob";
 import socialLinks from "@/app/components/iconLinks";
 
-const commits = { commit: "31" };
+const commits = { commit: "93+" };
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
           <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2">
             I am a passionate front-end developer skilled in building modern,
             interactive web applications. With expertise in React, Tailwind CSS,
-            Framer Motion, and Next.js, I create sleek, responsive, and highly
+            Framer Motion, Vue.js and Next.js, I create sleek, responsive, and highly
             dynamic user interfaces. Let's turn ideas into engaging digital
             experiences!
           </p>
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
 
           <div className="flex space-x-2">
-            <h1 className="text-5xl font-semibold text-foreground">2</h1>
+            <h1 className="text-5xl font-semibold text-foreground">4</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground">
                 Projects Completed

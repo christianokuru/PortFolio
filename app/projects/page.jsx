@@ -1,6 +1,8 @@
 import Image from "next/image";
 import project1 from "@/public/projects/ui-ux-design.png";
 import project2 from "@/public/projects/portfolio.png";
+import project3 from "@/public/projects/AtlaS.png"
+import massiveBarbs from "@/public/projects/massiveBarbecue.png"
 import { ArrowRightCircle, Github } from "lucide-react";
 import Link from "next/link";
 
@@ -28,11 +30,33 @@ const projects = [
     },
     stack: ['Next.js', 'Tailwind', 'Shadcn']
   },
+  {
+    id: 3,
+    image: project3,
+    title: "AtlaS E-commerce Site",
+    description: "Atlas e-commerce site is for everyone who wants to step up their fashion game,",
+    links: {
+      live: "port-folio-two-nu.vercel.app",
+      github: "https://github.com/christianokuru/PortFolio",
+    },
+    stack: ['Next.js', 'Tailwind', 'Sanity.io', 'Shadcn']
+  },
+  {
+    id: 4,
+    image: massiveBarbs,
+    title: "Massive Barbeque",
+    description: "Massive Barbecue: Serving Lagos with the finest grilled delights! From tender chicken to succulent seafood, our expertly seasoned and smoky flavors guarantee a mouthwatering experience. Perfect for every occasion!",
+    links: {
+      live: "https://massive-barbecue.vercel.app/",
+      github: "https://github.com/christianokuru/massive-barbecue-vue",
+    },
+    stack: ['Vue.js', 'Tailwind', 'CSS', 'Shadcn-Vue']
+  }
 ];
 
 export default function Projects() {
   return (
-    <div className="flex flex-col px-4 m-3">
+    <div className="flex flex-col px-4 lg:px-20 m-3">
       <section>
         <div className="w-full flex justify-center mb-2">
           <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:pb-6 lg:text-3xl lg:border-none">
