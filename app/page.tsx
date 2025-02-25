@@ -34,7 +34,7 @@ export default function Home() {
             </a>
           </div>
           {/* social media icons */}
-          <div className="flex gap-x-6 items-center justify-center pb-5 lg:gap-x-8 md:gap-x-10">
+          <div className="flex gap-x-6 items-center justify-center pb-5 lg:gap-x-8 md:gap-x-10 lg:mb-16">
             {socialLinks.map(({ link, icon }, index) => (
               <div key={index}>
                 <Link href={link} target="_blank" rel="noopener noreferrer">
