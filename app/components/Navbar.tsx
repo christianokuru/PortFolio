@@ -92,7 +92,7 @@ export default function Navbar() {
               href={item.href}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 pathname === item.href
-                  ? "text-white bg-primary"
+                  ? "text-primary bg-primary"
                   : "text-primary hover:text-white hover:bg-primary"
               }`}
               onClick={toggleMenu}

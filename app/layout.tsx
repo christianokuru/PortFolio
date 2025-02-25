@@ -27,7 +27,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="max-sm:px-0 px-[60px] my-7">
           <Navbar />
+          </div>
           <main className="container max-w-screen-2xl mx-auto pt-6">
             {children}
           </main>
