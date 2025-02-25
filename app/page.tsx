@@ -10,7 +10,7 @@ const commits = { commit: "150+" }
 export default function Home() {
   return (
     <>
-      <div className="pt-8 px-5 flex-col lg:pt-[130px] pb-3 text-center mx-auto border-b shadow rounded-xl border-border max-w-5xl">
+      <div className="pt-8 px-5 flex-col lg:pt-[70px] pb-3 text-center mx-auto border-b shadow rounded-xl border-border max-w-5xl">
         <div className="flex-col">
           <h1 className="text-muted-foreground pb-2 lg:pb-1">
             Front-End Developer
