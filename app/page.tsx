@@ -2,17 +2,14 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { Button } from "@/components/ui/button";
-
 import Link from "next/link";
-import Blob from "./components/Blob";
 import socialLinks from "@/app/components/iconLinks";
 
-const commits = { commit: "93+" };
+const commits = { commit: "150+" }
 
 export default function Home() {
   return (
     <>
-      {/* <Blob /> */}
       <div className="pt-8 px-5 flex-col lg:pt-[130px] pb-3 text-center mx-auto border-b shadow rounded-xl border-border max-w-5xl">
         <div className="flex-col">
           <h1 className="text-muted-foreground pb-2 lg:pb-1">
@@ -21,10 +18,10 @@ export default function Home() {
           <h1 className="font-bold text-primary text-6xl pb-2">
             Okuru Christian
           </h1>
-          <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2">
+          <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2 max-sm:text-justify max-sm:px-4 max-sm:mb-5">
             I am a passionate front-end developer skilled in building modern,
-            interactive web applications. With expertise in React, Tailwind CSS,
-            Framer Motion, Vue.js and Next.js, I create sleek, responsive, and highly
+            interactive web applications. With expertise in Nuxt.js, Vue.js, Next.js and Tailwind CSS,
+            I create sleek, responsive, and highly
             dynamic user interfaces. Let's turn ideas into engaging digital
             experiences!
           </p>
@@ -32,8 +29,8 @@ export default function Home() {
         {/* All the buttons */}
         <div className=" flex flex-col lg:gap-x-4 lg:pt-5 lg:flex lg:flex-row lg:justify-center">
           <div className="py-6 lg:py-0 md:py-9 lg:mr-7">
-            <a href="/Okuru-frontend-dev-cv.pdf" download>
-              <Button>Download CV</Button>
+            <a href="/FRONTEND-DEVELOPER-OKURU-CHRISTIAN-CV.pdf" download>
+              <Button className="max-sm:mb-6">Download CV</Button>
             </a>
           </div>
           {/* social media icons */}
@@ -42,9 +39,7 @@ export default function Home() {
               <div key={index}>
                 <Link href={link} target="_blank" rel="noopener noreferrer">
                   {" "}
-                  {/* opens social links in new tabs */}
                   {icon}{" "}
-                  {/* Now correctly handling React icons and static images */}
                 </Link>
               </div>
             ))}
@@ -99,7 +94,7 @@ export default function Home() {
           </div>
 
           <div className="flex">
-            <h1 className="text-5xl font-semibold">2</h1>
+            <h1 className="text-5xl font-semibold">4</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
                 Projects<br></br> Completed
@@ -110,7 +105,7 @@ export default function Home() {
 
         <div className="flex space-x-5 space-between border border-accent rounded-xl p-5 md:hidden">
           <div className="flex">
-            <h1 className="text-5xl font-semibold">4</h1>
+            <h1 className="text-5xl font-semibold">5</h1>
             <div className="flex items-center">
               <p className="text-sm text-muted-foreground pl-3">
                 Technologies<br></br>Mastered
