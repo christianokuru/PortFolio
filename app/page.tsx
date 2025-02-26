@@ -20,7 +20,7 @@ export default function Home() {
           </h1>
           <p className="leading-7 [&:not(:first-child)]:mt-3 lg:text-xl lg:py-2 max-sm:text-justify max-sm:px-4 max-sm:mb-5">
             I am a passionate front-end developer skilled in building modern,
-            interactive web applications. With expertise in Nuxt.js, Vue.js, Next.js and Tailwind CSS,
+            interactive web applications. With a deep expertise in Nuxt.js, Vue.js, Next.js and Tailwind CSS,
             I create sleek, responsive, and highly
             dynamic user interfaces. Let's turn ideas into engaging digital
             experiences!
