@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { User, Briefcase, GraduationCap, Code, Star, Phone, Mail, Globe, MapPin, FileText, Database, Zap, Layers, Palette, Globe2, Terminal, Wrench } from 'lucide-react';
+import { User, Briefcase, GraduationCap, Code, Star, Phone, Mail, Globe, MapPin, FileText, Zap, Layers, Palette, Globe2, Terminal, Wrench } from 'lucide-react';
 
 const AnimatedBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
