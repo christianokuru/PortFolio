@@ -85,16 +85,12 @@ export default function Navbar() {
           isOpen ? "opacity-100 max-h-[300px] shadow-lg" : "opacity-0 max-h-0"
         } overflow-hidden`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center dark:bg-[#292929]">
           {navLinks.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                pathname === item.href
-                  ? "text-white bg-primary"
-                  : "text-primary hover:text-white hover:bg-primary"
-              }`}
+              className="block px-3 py-2 rounded-md text-base font-medium dark:text-white"
               onClick={toggleMenu}
               aria-label={`${item.name} page`}
             >
