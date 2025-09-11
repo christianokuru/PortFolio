@@ -78,78 +78,48 @@ const ProjectCard = ({ project, index }) => {
       {/* Hover Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <div className="relative p-8">
+      <div className="relative p-4 sm:p-6 lg:p-8">
         {/* Project Number */}
-        <div className="absolute top-6 right-6 text-6xl font-bold text-gray-200/50 dark:text-white/10 group-hover:text-gray-300/60 dark:group-hover:text-white/20 transition-colors duration-500">
+        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-6xl font-bold text-gray-200/50 dark:text-white/10 group-hover:text-gray-300/60 dark:group-hover:text-white/20 transition-colors duration-500">
           {project.id < 10 ? `0${project.id}` : project.id}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-2 items-center">
           {/* Image Section */}
-          <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
-            <div className="aspect-video relative">
-              {!imageLoaded && (
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 animate-pulse"></div>
-              )}
+          <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mx-auto w-full max-w-md">
+            <div className="relative">
               <img
                 src={project.image}
                 alt={project.title}
-                className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
-                  imageLoaded ? "opacity-100" : "opacity-0"
-                }`}
-                onLoad={() => setImageLoaded(true)}
-                onError={() => setImageLoaded(true)}
+                className="w-full h-full object-cover rounded-2xl transition-all duration-700 group-hover:scale-110"
               />
-
-              {/* Image Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              {/* Quick Action Buttons */}
-              <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-                <a
-                  href={project.links.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-white/90 dark:bg-black/70 rounded-lg hover:bg-white dark:hover:bg-black/90 transition-colors"
-                >
-                  <Eye className="w-4 h-4 text-gray-700 dark:text-gray-300" />
-                </a>
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-white/90 dark:bg-black/70 rounded-lg hover:bg-white dark:hover:bg-black/90 transition-colors"
-                >
-                  <Code2 className="w-4 h-4 text-gray-700 dark:text-gray-300" />
-                </a>
-              </div>
             </div>
           </div>
 
           {/* Content Section */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
             {/* Category Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20 border border-purple-400/20 dark:border-purple-400/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-400/20 text-purple-700 dark:text-purple-300 rounded-full text-xs sm:text-sm font-medium">
               <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
               {project.category}
             </div>
 
             {/* Title */}
-            <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
               {project.title}
             </h3>
 
             {/* Description */}
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {project.description}
             </p>
 
             {/* Tech Stack */}
-            <div className="space-y-3">
-              <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+            <div className="space-y-2 sm:space-y-3">
+              <h4 className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                 Technologies Used
               </h4>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2">
                 {project.stack.map((tech, techIndex) => (
                   <TechStackBadge key={techIndex} tech={tech} />
                 ))}
@@ -157,14 +127,14 @@ const ProjectCard = ({ project, index }) => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 pt-4">
               <a
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
+                className="group/btn flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
               >
-                <ArrowRightCircle className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRightCircle className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
                 Live Demo
               </a>
 
@@ -172,9 +142,9 @@ const ProjectCard = ({ project, index }) => {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn flex items-center gap-2 px-6 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-gray-200/50 dark:border-white/20 text-gray-700 dark:text-gray-300 rounded-xl font-semibold transition-all duration-300 hover:bg-white/90 dark:hover:bg-white/20 hover:scale-105"
+                className="group/btn flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 dark:bg-white/10 border border-gray-200/50 dark:border-white/20 text-gray-700 dark:text-gray-300 rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-white/90 dark:hover:bg-white/20 hover:scale-105"
               >
-                <Github className="w-5 h-5 group-hover/btn:rotate-12 transition-transform" />
+                <Github className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:rotate-12 transition-transform" />
                 Source Code
               </a>
             </div>
