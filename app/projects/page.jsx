@@ -1,58 +1,14 @@
-"use client"
-import React, { useState } from 'react';
-import { ArrowRightCircle, Github, ExternalLink, Eye, Code2 } from 'lucide-react';
+"use client";
+import React, { useState } from "react";
+import { projects } from "@/data/projects"
+import {
+  ArrowRightCircle,
+  Github,
+  ExternalLink,
+  Eye,
+  Code2,
+} from "lucide-react";
 
-// Mock project data (you'll replace with your actual data)
-const projects = [
-  {
-    id: 1,
-    image: "/public/projects/ui-ux-design.png", // You'll use your actual images
-    title: "Frontend Project",
-    description: "The UI/UX team created the design of this website. I designed the website utilizing the mobile first strategy, however it has no functionality or pages.",
-    links: {
-      live: "https://nextjs2-okuruchristian-gmailcoms-projects.vercel.app/",
-      github: "https://google.com",
-    },
-    stack: ['Next.js', 'Tailwind', 'Figma'],
-    category: "Web Design"
-  },
-  {
-    id: 2,
-    image: "/projects/portfolio.png",
-    title: "My Portfolio Site",
-    description: "This is my personal portfolio site showcasing my work and skills with modern design principles and smooth animations.",
-    links: {
-      live: "https://port-folio-two-nu.vercel.app",
-      github: "https://github.com/christianokuru/PortFolio",
-    },
-    stack: ['Next.js', 'Tailwind', 'Shadcn'],
-    category: "Portfolio"
-  },
-  {
-    id: 3,
-    image: "/projects/AtlaS.png",
-    title: "AtlaS E-commerce Site",
-    description: "Atlas e-commerce site is for everyone who wants to step up their fashion game, featuring modern UI/UX and seamless shopping experience.",
-    links: {
-      live: "https://port-folio-two-nu.vercel.app",
-      github: "https://github.com/christianokuru/PortFolio",
-    },
-    stack: ['Next.js', 'Tailwind', 'Sanity.io', 'Shadcn'],
-    category: "E-commerce"
-  },
-  {
-    id: 4,
-    image: "/projects/massiveBarbecue.png",
-    title: "Massive Barbeque",
-    description: "Massive Barbecue: Serving Lagos with the finest grilled delights! From tender chicken to succulent seafood, our expertly seasoned and smoky flavors guarantee a mouthwatering experience.",
-    links: {
-      live: "https://massive-barbecue.vercel.app/",
-      github: "https://github.com/christianokuru/massive-barbecue-vue",
-    },
-    stack: ['Vue.js', 'Tailwind', 'CSS', 'Shadcn-Vue'],
-    category: "Restaurant"
-  }
-];
 
 const AnimatedBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -72,7 +28,7 @@ const FloatingElements = () => (
           left: `${15 + i * 12}%`,
           top: `${20 + (i % 4) * 20}%`,
           animationDelay: `${i * 0.7}s`,
-          animationDuration: `${2 + i * 0.2}s`
+          animationDuration: `${2 + i * 0.2}s`,
         }}
       />
     ))}
@@ -81,19 +37,32 @@ const FloatingElements = () => (
 
 const TechStackBadge = ({ tech }) => {
   const colors = {
-    'Next.js': 'from-gray-500/10 to-gray-600/10 border-gray-400/20 text-gray-700 dark:text-gray-300',
-    'React': 'from-blue-500/10 to-blue-600/10 border-blue-400/20 text-blue-700 dark:text-blue-300',
-    'Vue.js': 'from-green-500/10 to-green-600/10 border-green-400/20 text-green-700 dark:text-green-300',
-    'Tailwind': 'from-cyan-500/10 to-cyan-600/10 border-cyan-400/20 text-cyan-700 dark:text-cyan-300',
-    'Figma': 'from-pink-500/10 to-pink-600/10 border-pink-400/20 text-pink-700 dark:text-pink-300',
-    'Shadcn': 'from-purple-500/10 to-purple-600/10 border-purple-400/20 text-purple-700 dark:text-purple-300',
-    'Sanity.io': 'from-red-500/10 to-red-600/10 border-red-400/20 text-red-700 dark:text-red-300',
-    'CSS': 'from-blue-500/10 to-blue-600/10 border-blue-400/20 text-blue-700 dark:text-blue-300',
-    'Shadcn-Vue': 'from-emerald-500/10 to-emerald-600/10 border-emerald-400/20 text-emerald-700 dark:text-emerald-300'
+    "Next.js":
+      "from-gray-500/10 to-gray-600/10 border-gray-400/20 text-gray-700 dark:text-gray-300",
+    React:
+      "from-blue-500/10 to-blue-600/10 border-blue-400/20 text-blue-700 dark:text-blue-300",
+    "Vue.js":
+      "from-green-500/10 to-green-600/10 border-green-400/20 text-green-700 dark:text-green-300",
+    Tailwind:
+      "from-cyan-500/10 to-cyan-600/10 border-cyan-400/20 text-cyan-700 dark:text-cyan-300",
+    Figma:
+      "from-pink-500/10 to-pink-600/10 border-pink-400/20 text-pink-700 dark:text-pink-300",
+    Shadcn:
+      "from-purple-500/10 to-purple-600/10 border-purple-400/20 text-purple-700 dark:text-purple-300",
+    "Sanity.io":
+      "from-red-500/10 to-red-600/10 border-red-400/20 text-red-700 dark:text-red-300",
+    CSS: "from-blue-500/10 to-blue-600/10 border-blue-400/20 text-blue-700 dark:text-blue-300",
+    "Shadcn-Vue":
+      "from-emerald-500/10 to-emerald-600/10 border-emerald-400/20 text-emerald-700 dark:text-emerald-300",
   };
-  
+
   return (
-    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r border transition-all duration-300 hover:scale-105 ${colors[tech] || 'from-gray-500/10 to-gray-600/10 border-gray-400/20 text-gray-700 dark:text-gray-300'}`}>
+    <span
+      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r border transition-all duration-300 hover:scale-105 ${
+        colors[tech] ||
+        "from-gray-500/10 to-gray-600/10 border-gray-400/20 text-gray-700 dark:text-gray-300"
+      }`}
+    >
       {tech}
     </span>
   );
@@ -101,21 +70,21 @@ const TechStackBadge = ({ tech }) => {
 
 const ProjectCard = ({ project, index }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  
+
   return (
-    <div 
+    <div
       className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-3xl overflow-hidden transition-all duration-700 hover:bg-white/90 dark:hover:bg-white/10 hover:border-gray-300/50 dark:hover:border-white/20 hover:scale-[1.02] hover:-translate-y-2"
       style={{ animationDelay: `${index * 200}ms` }}
     >
       {/* Hover Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      
+
       <div className="relative p-8">
         {/* Project Number */}
         <div className="absolute top-6 right-6 text-6xl font-bold text-gray-200/50 dark:text-white/10 group-hover:text-gray-300/60 dark:group-hover:text-white/20 transition-colors duration-500">
           {project.id < 10 ? `0${project.id}` : project.id}
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Image Section */}
           <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
@@ -126,14 +95,16 @@ const ProjectCard = ({ project, index }) => {
               <img
                 src={project.image}
                 alt={project.title}
-                className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
+                  imageLoaded ? "opacity-100" : "opacity-0"
+                }`}
                 onLoad={() => setImageLoaded(true)}
                 onError={() => setImageLoaded(true)}
               />
-              
+
               {/* Image Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               {/* Quick Action Buttons */}
               <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                 <a
@@ -155,7 +126,7 @@ const ProjectCard = ({ project, index }) => {
               </div>
             </div>
           </div>
-          
+
           {/* Content Section */}
           <div className="space-y-6">
             {/* Category Badge */}
@@ -163,17 +134,17 @@ const ProjectCard = ({ project, index }) => {
               <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
               {project.category}
             </div>
-            
+
             {/* Title */}
             <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
               {project.title}
             </h3>
-            
+
             {/* Description */}
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               {project.description}
             </p>
-            
+
             {/* Tech Stack */}
             <div className="space-y-3">
               <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
@@ -185,7 +156,7 @@ const ProjectCard = ({ project, index }) => {
                 ))}
               </div>
             </div>
-            
+
             {/* Action Buttons */}
             <div className="flex gap-4 pt-4">
               <a
@@ -197,7 +168,7 @@ const ProjectCard = ({ project, index }) => {
                 <ArrowRightCircle className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 Live Demo
               </a>
-              
+
               <a
                 href={project.links.github}
                 target="_blank"
@@ -220,7 +191,7 @@ export default function Projects() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-gray-100 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 relative overflow-hidden">
       <AnimatedBackground />
       <FloatingElements />
-      
+
       <div className="relative z-10 container mx-auto px-6 py-20">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
@@ -229,26 +200,26 @@ export default function Projects() {
               <Code2 className="w-4 h-4" />
               Featured Work
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-purple-900 dark:from-white dark:via-purple-200 dark:to-purple-400 bg-clip-text text-transparent">
                 My Projects
               </span>
             </h1>
-            
+
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              A collection of projects that showcase my skills in modern web development, 
-              from responsive designs to full-stack applications.
+              A collection of projects that showcase my skills in modern web
+              development, from responsive designs to full-stack applications.
             </p>
           </div>
-          
+
           {/* Projects Grid */}
           <div className="space-y-16">
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
-          
+
           {/* Call to Action */}
           {/* <div className="text-center mt-20">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/25 hover:scale-105">
