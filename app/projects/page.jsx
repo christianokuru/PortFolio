@@ -5,9 +5,9 @@ import {
   ArrowRightCircle,
   Github,
   ExternalLink,
-  Eye,
   Code2,
 } from "lucide-react";
+import Image from "next/image";
 
 const AnimatedBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -68,9 +68,7 @@ const TechStackBadge = ({ tech }) => {
 };
 
 const ProjectCard = ({ project, index }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  return (
+   return (
     <div
       className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-3xl overflow-hidden transition-all duration-700 hover:bg-white/90 dark:hover:bg-white/10 hover:border-gray-300/50 dark:hover:border-white/20 hover:scale-[1.02] hover:-translate-y-2"
       style={{ animationDelay: `${index * 200}ms` }}
@@ -88,7 +86,7 @@ const ProjectCard = ({ project, index }) => {
           {/* Image Section */}
           <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mx-auto w-full max-w-md">
             <div className="relative">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 group-hover:scale-110"
