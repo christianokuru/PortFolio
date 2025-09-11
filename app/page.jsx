@@ -191,7 +191,7 @@ export default function Home() {
                 <span className="font-medium">Tailwind CSS</span>
               </div>
               <div className="group px-6 py-3 bg-gradient-to-r from-orange-500/10 to-orange-600/10 dark:from-orange-500/20 dark:to-orange-600/20 border border-orange-400/20 dark:border-orange-400/30 text-orange-700 dark:text-orange-300 rounded-full hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">Framer Motion</span>
+                <span className="font-medium">GSAP</span>
               </div>
             </div>
           </div>
