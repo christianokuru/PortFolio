@@ -33,7 +33,7 @@ const TechStackBadge = ({ tech }) => {
   const colors = {
     "Next.js":
       "from-gray-500/10 to-gray-600/10 border-gray-400/20 text-gray-700 dark:text-gray-300",
-    React:
+    "React":
       "from-blue-500/10 to-blue-600/10 border-blue-400/20 text-blue-700 dark:text-blue-300",
     "Vue.js":
       "from-green-500/10 to-green-600/10 border-green-400/20 text-green-700 dark:text-green-300",
@@ -65,11 +65,11 @@ const TechStackBadge = ({ tech }) => {
 const ProjectCard = ({ project, index }) => {
   return (
     <div
-      className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-3xl overflow-hidden transition-all duration-700 hover:bg-white/90 dark:hover:bg-white/10 hover:border-gray-300/50 dark:hover:border-white/20 hover:scale-[1.02] hover:-translate-y-2"
+      className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-xl overflow-hidden transition-all duration-700 hover:bg-white/90 dark:hover:bg-white/10 hover:border-gray-300/50 dark:hover:border-white/20 hover:scale-[1.02] hover:-translate-y-2"
       style={{ animationDelay: `${index * 200}ms` }}
     >
       {/* Hover Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       <div className="relative p-4 sm:p-6 lg:p-8">
         {/* Project Number */}
@@ -85,7 +85,7 @@ const ProjectCard = ({ project, index }) => {
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover rounded-2xl transition-all duration-700 group-hover:scale-110"
+                className="object-cover rounded-xl transition-all duration-700 group-hover:scale-95"
               />
             </div>
           </div>

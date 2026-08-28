@@ -1,6 +1,45 @@
 export const projects = [
   {
     id: 1,
+    image: "/projects/kylva.png",
+    title: "Kylva",
+    description:
+      "A portfolio website that showcases Beauty and Cosmetics E-commerce websites to clients.",
+    links: {
+      live: "https://www.kylva.com/",
+      github: "https://github.com/christianokuru/Kylva",
+    },
+    stack: ["Nuxt.js", "Shadcn-Vue", "Tailwind"],
+    category: "Beauty and Cosmetics E-commerce",
+  },
+  {
+    id: 2,
+    image: "/projects/3d-product.png",
+    title: "3D Product Visualization",
+    description:
+      "A 3D Product Visualization website that showcases Photorealistic 3D models of products.",
+    links: {
+      live: "https://3d-product-vizualization.vercel.app/",
+      github: "https://github.com/christianokuru/3D-Product-Vizualization",
+    },
+    stack: ["Next.js", "ShadCn", "Tailwind"],
+    category: "3D Product Visualization",
+  },
+  {
+    id: 3,
+    image: "/projects/oats-collection.png",
+    title: "Oats Collection",
+    description:
+      "We believe in the power of oats—a timeless ingredient celebrated for its soothing, protective, and restorative properties. Each product is carefully formulated to deliver visible results while respecting your skin's natural balance.",
+    links: {
+      live: "https://oats-collections.vercel.app/",
+      github: "https://github.com/christianokuru/Oats-Collections",
+    },
+    stack: ["Nuxt.js", "Vue.js", "Tailwind"],
+    category: "Skincare",
+  },
+  {
+    id: 4,
     image: "/projects/mojoda.png",
     title: "Mojoda Football Club",
     description:
@@ -13,7 +52,7 @@ export const projects = [
     category: "Football Club",
   },
   {
-    id: 2,
+    id: 5,
     image: "/projects/hours-collection.png",
     title: "Hours Collection",
     description:
@@ -26,7 +65,7 @@ export const projects = [
     category: "Clothing E-commerce Store",
   },
   {
-    id: 3,
+    id: 6,
     image: "/projects/massiveBarbecue.png",
     title: "Massive Barbeque",
     description:
@@ -39,7 +78,7 @@ export const projects = [
     category: "Restaurant",
   },
   {
-    id: 4,
+    id: 7,
     image: "/projects/funiro.png",
     title: "Funiro",
     description:
@@ -52,7 +91,7 @@ export const projects = [
     category: "Funiture E-commerce Store",
   },
   {
-    id: 5,
+    id: 8,
     image: "/projects/crypgo.png",
     title: "Crypgo",
     description:
@@ -65,7 +104,7 @@ export const projects = [
     category: "Cryptocurrency",
   },
   {
-    id: 6,
+    id: 9,
     image: "/projects/ui-ux-design.png",
     title: "Frontend Project",
     description:
@@ -78,7 +117,7 @@ export const projects = [
     category: "Web Design",
   },
   {
-    id: 7,
+    id: 10,
     image: "/projects/portfolio.png",
     title: "My Portfolio Site",
     description:
@@ -91,7 +130,7 @@ export const projects = [
     category: "Portfolio",
   },
   {
-    id: 8,
+    id: 11,
     image: "/projects/AtlaS.png",
     title: "AtlaS E-commerce Site",
     description:
