@@ -4,21 +4,21 @@ import { Download, Github, Linkedin, Mail, ExternalLink, Code, Zap, Users, GitBr
 
 // Mock social links data
 const socialLinks = [
-  { link: "https://github.com", icon: <Github className="w-6 h-6" />, label: "GitHub" },
-  { link: "https://linkedin.com", icon: <Linkedin className="w-6 h-6" />, label: "LinkedIn" },
-  { link: "mailto:okuru@example.com", icon: <Mail className="w-6 h-6" />, label: "Email" },
+  { link: "https://github.com/christianokuru", icon: <Github className="w-6 h-6" />, label: "GitHub" },
+  { link: "https://linkedin.com/in/christianokuru", icon: <Linkedin className="w-6 h-6" />, label: "LinkedIn" },
+  { link: "mailto:okuruchristian@gmail.com", icon: <Mail className="w-6 h-6" />, label: "Email" },
 ];
 
 // Constants
 const PERSONAL_INFO = {
   name: "Okuru Christian",
-  title: "Front-End Developer",
+  title: "Front-End Web Developer",
   description: "I craft exceptional digital experiences with modern web technologies. Specializing in React, Next.js, Vue.js, Nuxt.js, and Tailwind CSS to bring innovative ideas to life.",
-  cvPath: "/Okuru-Christian-Frontend-cv.pdf"
+  cvPath: "/FRONTEND - OKURU CHRISTIAN.pdf"
 };
 
 const METRICS = [
-  { value: 2, label: "Years Experience", icon: <Zap className="w-5 h-5" />, suffix: "" },
+  { value: 4, label: "Years Experience", icon: <Zap className="w-5 h-5" />, suffix: "" },
   { value: 10, label: "Projects Delivered", icon: <Code className="w-5 h-5" />, suffix: "+" },
   { value: 5, label: "Technologies", icon: <Users className="w-5 h-5" />, suffix: "" },
   { value: 500, label: "Commits", icon: <GitBranch className="w-5 h-5" />, suffix: "+" }
