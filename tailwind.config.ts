@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,12 +12,13 @@ const config: Config = {
     extend: {
       colors: {
         // Gallery palette
-        canvas: "#ffffff",
-        ink: "#000000",
-        paper: "#f6f6f6",
-        quiet: "#878787",
-        line: "#e6e6e6",
-        avail: "#189e48",
+        // Values live in globals.css so light and dark themes can swap them
+        canvas: "rgb(var(--c-canvas) / <alpha-value>)",
+        ink: "rgb(var(--c-ink) / <alpha-value>)",
+        paper: "rgb(var(--c-paper) / <alpha-value>)",
+        quiet: "rgb(var(--c-quiet) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        avail: "rgb(var(--c-avail) / <alpha-value>)",
 
         // Kept for the shadcn/ui primitives in /components/ui
         background: "hsl(var(--background))",

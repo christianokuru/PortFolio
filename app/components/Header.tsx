@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV, PERSON, SOCIALS } from "@/data/site";
 import Availability from "./Availability";
+import ThemeToggle from "./ThemeToggle";
+import { getLenis } from "@/lib/lenis";
 
 function MenuIcon() {
   return (
@@ -29,11 +31,15 @@ export default function Header() {
   // Close the menu when the page changes
   useEffect(() => setOpen(false), [pathname]);
 
-  // Stop the page scrolling behind the open menu
+  // Stop the page scrolling behind the open menu (native and smooth scroll)
   useEffect(() => {
+    const lenis = getLenis();
     document.body.style.overflow = open ? "hidden" : "";
+    if (open) lenis?.stop();
+    else lenis?.start();
     return () => {
       document.body.style.overflow = "";
+      getLenis()?.start();
     };
   }, [open]);
 
@@ -41,16 +47,19 @@ export default function Header() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 bg-canvas">
         <div className="wrap grid h-[60px] grid-cols-[1fr_auto] items-center lg:h-[76px] lg:grid-cols-[1fr_auto_1fr]">
-          {/* Phone: menu pill on the left */}
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="pill pill-line justify-self-start lg:hidden"
-            aria-expanded={open}
-            aria-controls="site-menu"
-          >
-            Menu <MenuIcon />
-          </button>
+          {/* Phone: menu pill + theme toggle on the left */}
+          <div className="flex items-center gap-1.5 justify-self-start lg:hidden">
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="pill pill-line"
+              aria-expanded={open}
+              aria-controls="site-menu"
+            >
+              Menu <MenuIcon />
+            </button>
+            <ThemeToggle />
+          </div>
 
           {/* Desktop: nav pills on the left */}
           <nav className="hidden items-center gap-2 lg:flex" aria-label="Main">
@@ -78,6 +87,7 @@ export default function Header() {
           {/* Desktop: availability + conversion on the right */}
           <div className="hidden items-center justify-end gap-4 lg:flex">
             <Availability />
+            <ThemeToggle />
             <Link href="/contact" className="pill pill-dark">
               Start a project
             </Link>

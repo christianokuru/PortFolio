@@ -137,7 +137,7 @@ export default function Contact() {
             onChange={handleInputChange}
             required
           />
-          {emailError && <p className="t-small text-red-700">{emailError}</p>}
+          {emailError && <p className="t-small text-red-700 dark:text-red-400">{emailError}</p>}
           <label className="sr-only" htmlFor="phone">Phone number</label>
           <input
             id="phone"
@@ -171,7 +171,7 @@ export default function Contact() {
             </button>
             {status && (
               <p
-                className={`t-small ${status.ok ? "text-avail" : "text-red-700"}`}
+                className={`t-small ${status.ok ? "text-avail" : "text-red-700 dark:text-red-400"}`}
                 role="status"
               >
                 {status.text}
