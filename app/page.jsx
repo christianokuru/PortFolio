@@ -10,7 +10,6 @@ import Faq from "./components/Faq";
 const COLLAGE = [
   { id: 12, w: "w-[230px] lg:w-[400px]", h: "h-[175px] lg:h-[300px]" },
   { id: 1, w: "w-[260px] lg:w-[420px]", h: "h-[150px] lg:h-[250px]" },
-  { id: 4, w: "w-[200px] lg:w-[330px]", h: "h-[190px] lg:h-[320px]" },
   { id: 2, w: "w-[280px] lg:w-[470px]", h: "h-[140px] lg:h-[230px]" },
   { id: 6, w: "w-[210px] lg:w-[340px]", h: "h-[175px] lg:h-[290px]" },
   { id: 3, w: "w-[250px] lg:w-[400px]", h: "h-[155px] lg:h-[260px]" },
@@ -18,7 +17,7 @@ const COLLAGE = [
   { id: 5, w: "w-[260px] lg:w-[430px]", h: "h-[150px] lg:h-[240px]" },
 ];
 
-const PROOF = ["Ochre", "Kylva", "Mojoda FC", "BernodeHub", "Oats Collection", "Massive Barbecue"];
+const PROOF = ["Ochre", "Kylva", "BernodeHub", "Oats Collection", "Massive Barbecue"];
 
 const PROMISES = [
   { label: "Mobile first", rot: "-rotate-[6deg]" },
@@ -50,7 +49,7 @@ const REASONS = [
 const byId = (id) => projects.find((p) => p.id === id);
 
 export default function Home() {
-  const featured = [12, 1, 4, 2, 6, 3].map(byId).filter(Boolean);
+  const featured = [12, 1, 2, 6, 3, 5].map(byId).filter(Boolean);
 
   return (
     <>
@@ -115,7 +114,7 @@ export default function Home() {
       {/* ---------- Proof row ---------- */}
       <section className="wrap section text-center">
         <p className="t-small mx-auto max-w-[36ch] md:max-w-none">
-          4+ years and 10+ websites for stores, startups, clubs and creative brands.
+          4+ years and 10+ websites for stores, startups and creative brands.
         </p>
         <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 lg:mt-8 lg:gap-x-16">
           {PROOF.map((name, i) => (

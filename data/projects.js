@@ -54,19 +54,6 @@ export const projects = [
     category: "Skincare",
   },
   {
-    id: 4,
-    image: "/projects/mojoda.png",
-    title: "Mojoda Football Club",
-    description:
-      "MOJODA FC is a forward-thinking grassroots football club dedicated to talent identification in rural areas, ensuring that every promising youngster—no matter their background—has the opportunity to shine.",
-    links: {
-      live: "https://www.mojodafc.com/",
-      github: "", // private repo
-    },
-    stack: ["Nuxt.js", "Vue.js", "Tailwind", "Figma"],
-    category: "Football Club",
-  },
-  {
     id: 5,
     image: "/projects/hours-collection.png",
     title: "Hours Collection",
@@ -138,7 +125,7 @@ export const projects = [
     description:
       "This is my personal portfolio site showcasing my work and skills with modern design principles and smooth animations.",
     links: {
-      live: "https://port-folio-two-nu.vercel.app",
+      live: "https://okuru-christian.vercel.app",
       github: "https://github.com/christianokuru/PortFolio",
     },
     stack: ["Next.js", "Tailwind", "Shadcn"],

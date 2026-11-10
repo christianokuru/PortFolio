@@ -3,7 +3,7 @@
 
 // Public address of the site. Set NEXT_PUBLIC_SITE_URL if you move to a custom domain.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://port-folio-two-nu.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://okuru-christian.vercel.app"
 ).replace(/\/$/, "");
 
 export const SITE_DESCRIPTION =
@@ -29,7 +29,7 @@ export const NAV = [
 export const SOCIALS = [
   { name: "GitHub", href: "https://github.com/christianokuru" },
   { name: "LinkedIn", href: "https://linkedin.com/in/okuru-christian" },
-  { name: "X", href: "https://x.com/arts_from_khris" },
+  { name: "X", href: "https://x.com/Dev_Chrisss" },
   { name: "Telegram", href: "https://t.me/Bitter_noodles" },
   { name: "WhatsApp", href: "https://wa.me/2349059952426" },
 ];
@@ -104,7 +104,7 @@ export const FAQ = [
   },
   {
     q: "What kinds of websites have you built?",
-    a: "Online stores, a SaaS landing page, brand and product sites, a football club website and a 3D product viewer. You can see them all on the Work page.",
+    a: "Online stores, a SaaS landing page, brand and product sites, a restaurant site and a 3D product viewer. You can see them all on the Work page.",
   },
   {
     q: "How long does a website take?",
