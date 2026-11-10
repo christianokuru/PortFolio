@@ -1,202 +1,245 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import { Download, Github, Linkedin, Mail, ExternalLink, Code, Zap, Users, GitBranch } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { projects } from "@/data/projects";
+import { CORE_STACK, EDUCATION, EXPERIENCE, FAQ, PERSON } from "@/data/site";
+import Tag from "./components/Tag";
+import ProjectRow from "./components/ProjectRow";
+import Faq from "./components/Faq";
 
-// Mock social links data
-const socialLinks = [
-  { link: "https://github.com/christianokuru", icon: <Github className="w-6 h-6" />, label: "GitHub" },
-  { link: "https://linkedin.com/in/christianokuru", icon: <Linkedin className="w-6 h-6" />, label: "LinkedIn" },
-  { link: "mailto:okuruchristian@gmail.com", icon: <Mail className="w-6 h-6" />, label: "Email" },
+// Collage tiles: unequal widths and heights, bottom-aligned like prints on a table
+const COLLAGE = [
+  { id: 1, w: "w-[260px] lg:w-[420px]", h: "h-[150px] lg:h-[250px]" },
+  { id: 4, w: "w-[200px] lg:w-[330px]", h: "h-[190px] lg:h-[320px]" },
+  { id: 2, w: "w-[280px] lg:w-[470px]", h: "h-[140px] lg:h-[230px]" },
+  { id: 6, w: "w-[210px] lg:w-[340px]", h: "h-[175px] lg:h-[290px]" },
+  { id: 3, w: "w-[250px] lg:w-[400px]", h: "h-[155px] lg:h-[260px]" },
+  { id: 8, w: "w-[200px] lg:w-[320px]", h: "h-[185px] lg:h-[300px]" },
+  { id: 5, w: "w-[260px] lg:w-[430px]", h: "h-[150px] lg:h-[240px]" },
 ];
 
-// Constants
-const PERSONAL_INFO = {
-  name: "Okuru Christian",
-  title: "Front-End Web Developer",
-  description: "I craft exceptional digital experiences with modern web technologies. Specializing in React, Next.js, Vue.js, Nuxt.js, and Tailwind CSS to bring innovative ideas to life.",
-  cvPath: "/FRONTEND - OKURU CHRISTIAN.pdf"
-};
+const PROOF = ["Kylva", "Mojoda FC", "BernodeHub", "Oats Collection", "Massive Barbecue"];
 
-const METRICS = [
-  { value: 4, label: "Years Experience", icon: <Zap className="w-5 h-5" />, suffix: "" },
-  { value: 10, label: "Projects Delivered", icon: <Code className="w-5 h-5" />, suffix: "+" },
-  { value: 5, label: "Technologies", icon: <Users className="w-5 h-5" />, suffix: "" },
-  { value: 500, label: "Commits", icon: <GitBranch className="w-5 h-5" />, suffix: "+" }
+const PROMISES = [
+  { label: "Mobile first", rot: "-rotate-[6deg]" },
+  { label: "Fast loading", rot: "rotate-[3deg]" },
+  { label: "SEO ready", rot: "-rotate-[2deg]" },
+  { label: "Easy to update", rot: "rotate-[7deg]" },
+  { label: "Clean code", rot: "-rotate-[4deg]" },
 ];
 
-const AnimatedBackground = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute -top-4 -left-4 w-72 h-72 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute top-20 right-10 w-96 h-96 bg-blue-300/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div className="absolute -bottom-10 left-1/2 w-80 h-80 bg-emerald-300/20 dark:bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-  </div>
-);
+const REASONS = [
+  {
+    title: "Mobile first.",
+    text: "Every layout starts on the phone, then grows to tablet and desktop.",
+  },
+  {
+    title: "Design to code, faithfully.",
+    text: "I turn Figma files into responsive pages that match the design closely.",
+  },
+  {
+    title: "Modern stack.",
+    text: "React, Next.js, Vue and Nuxt with Tailwind CSS — fast to build, easy to grow.",
+  },
+];
 
-const GlowingButton = ({ children, href, download, className = "" }) => (
-  <a 
-    href={href} 
-    download={download}
-    className={`group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 hover:-translate-y-1 ${className}`}
-  >
-    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl blur opacity-70 group-hover:opacity-100 transition-opacity"></div>
-    <div className="relative flex items-center gap-2">
-      {children}
-    </div>
-  </a>
-);
-
-const MetricCard = ({ metric, index }) => {
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const increment = metric.value / 50;
-      const counter = setInterval(() => {
-        setCount(prev => {
-          if (prev >= metric.value) {
-            clearInterval(counter);
-            return metric.value;
-          }
-          return Math.min(prev + increment, metric.value);
-        });
-      }, 50);
-      return () => clearInterval(counter);
-    }, index * 200);
-    
-    return () => clearTimeout(timer);
-  }, [metric.value, index]);
-
-  return (
-    <div className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-2xl p-6 transition-all duration-500 hover:bg-white/90 dark:hover:bg-white/10 hover:border-gray-300/50 dark:hover:border-white/20 hover:scale-105 hover:-translate-y-2">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="relative">
-        <div className="flex items-center justify-between mb-3">
-          <div className="p-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20 rounded-lg">
-            {metric.icon}
-          </div>
-          <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-600 dark:text-gray-300" />
-        </div>
-        <div className="space-y-1">
-          <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-            {Math.floor(count)}{metric.suffix}
-          </div>
-          <div className="text-sm text-gray-500 dark:text-gray-400">
-            {metric.label}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const SocialLink = ({ link }) => (
-  <a
-    href={link.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group relative p-4 bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-xl transition-all duration-300 hover:bg-white/90 dark:hover:bg-white/10 hover:border-gray-300/50 dark:hover:border-white/20 hover:scale-110 hover:-translate-y-1"
-    title={link.label}
-  >
-    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 dark:from-purple-500/20 dark:to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-    <div className="relative text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-      {link.icon}
-    </div>
-  </a>
-);
-
-const FloatingElements = () => (
-  <div className="absolute inset-0 pointer-events-none">
-    {[...Array(6)].map((_, i) => (
-      <div
-        key={i}
-        className={`absolute w-2 h-2 bg-white/20 rounded-full animate-pulse`}
-        style={{
-          left: `${20 + i * 15}%`,
-          top: `${30 + (i % 3) * 20}%`,
-          animationDelay: `${i * 0.5}s`,
-          animationDuration: `${2 + i * 0.3}s`
-        }}
-      />
-    ))}
-  </div>
-);
+const byId = (id) => projects.find((p) => p.id === id);
 
 export default function Home() {
+  const featured = [1, 4, 2, 6, 3, 5].map(byId).filter(Boolean);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-gray-100 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 relative overflow-hidden">
-      <AnimatedBackground />
-      <FloatingElements />
-      
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-6xl mx-auto">
-          {/* Hero Section */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-gray-200/50 dark:border-white/20 rounded-full text-sm text-gray-600 dark:text-gray-300 mb-8">
-              <div className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
-              Available for new opportunities
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-purple-900 dark:from-white dark:via-purple-200 dark:to-purple-400 bg-clip-text text-transparent">
-                {PERSONAL_INFO.name}
-              </span>
-            </h1>
-            
-            <div className="text-xl md:text-2xl text-purple-600 dark:text-purple-300 mb-8 font-medium">
-              {PERSONAL_INFO.title}
-            </div>
-            
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
-              {PERSONAL_INFO.description}
+    <>
+      {/* ---------- Hero ---------- */}
+      <section className="wrap pt-10 md:pt-16 lg:pt-20">
+        <h1 className="t-hero max-w-[15ch]">
+          Websites that look sharp, load fast and turn{" "}
+          <span className="t-sans-splice">visitors</span> into{" "}
+          <span className="t-italic">clients.</span>
+        </h1>
+
+        <p className="t-body mt-5 max-w-[44ch] lg:mt-6">
+          I’m {PERSON.name}, a front-end developer. I build websites and online stores
+          with React, Next.js, Vue and Nuxt — mobile first, quick on every screen.
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-1.5 lg:mt-6">
+          {CORE_STACK.map((t) => (
+            <Tag key={t} label={t} />
+          ))}
+        </div>
+
+        <div className="mt-7 flex flex-wrap gap-2 lg:mt-9">
+          <Link href="/contact" className="pill pill-dark pill-lg">
+            Start a project
+          </Link>
+          <a href={PERSON.cvPath} download className="pill pill-soft pill-lg">
+            Download CV
+          </a>
+        </div>
+      </section>
+
+      {/* ---------- Collage ---------- */}
+      <section className="relative mt-12 lg:mt-16" aria-label="Recent work">
+        <div className="no-scrollbar flex snap-x snap-mandatory items-end gap-3 overflow-x-auto px-4 md:px-6 lg:gap-4 lg:px-8">
+          {COLLAGE.map((tile) => {
+            const p = byId(tile.id);
+            if (!p) return null;
+            return (
+              <Link
+                key={tile.id}
+                href={`/projects#project-${p.id}`}
+                className={`relative shrink-0 snap-start overflow-hidden bg-paper ${tile.w} ${tile.h}`}
+                aria-label={p.title}
+              >
+                <Image
+                  src={p.image}
+                  alt={`${p.title} website`}
+                  fill
+                  sizes="(min-width: 1024px) 470px, 280px"
+                  className="object-cover object-left-top"
+                />
+              </Link>
+            );
+          })}
+        </div>
+        <span className="pill pill-dark pointer-events-none absolute bottom-3 left-4 md:hidden">
+          Swipe <span aria-hidden="true">→</span>
+        </span>
+      </section>
+
+      {/* ---------- Proof row ---------- */}
+      <section className="wrap section text-center">
+        <p className="t-small mx-auto max-w-[36ch] md:max-w-none">
+          10+ websites shipped for stores, startups, clubs and creative brands.
+        </p>
+        <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 lg:mt-8 lg:gap-x-16">
+          {PROOF.map((name, i) => (
+            <li
+              key={name}
+              className={`text-quiet ${
+                i % 2
+                  ? "font-sans text-[15px] font-medium tracking-[-0.02em] lg:text-[22px]"
+                  : "font-serif text-[19px] italic lg:text-[28px]"
+              }`}
+            >
+              {name}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ---------- Selected work ---------- */}
+      <section className="wrap">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <h2 className="t-display max-w-[14ch]">
+            Selected work, built to be <span className="t-italic">used.</span>
+          </h2>
+          <Link href="/projects" className="pill pill-dark pill-lg self-start lg:self-auto">
+            See all {projects.length} projects
+          </Link>
+        </div>
+
+        <div className="mt-4 lg:mt-8">
+          {featured.map((project, i) => (
+            <ProjectRow key={project.id} project={project} index={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* ---------- Approach ---------- */}
+      <section className="wrap section">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <ul className="mb-8 flex flex-wrap gap-2 lg:mb-10" aria-label="What you get">
+              {PROMISES.map((p) => (
+                <li key={p.label} className={`pill pill-soft ${p.rot}`}>
+                  {p.label}
+                </li>
+              ))}
+            </ul>
+
+            <h2 className="t-display max-w-[13ch]">
+              Designed with care. Built to <span className="t-italic">last.</span>
+            </h2>
+            <p className="t-body mt-5 max-w-[42ch]">
+              For businesses that want a website people enjoy using. Clear layouts, smooth
+              details and code that’s easy to grow later.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <GlowingButton href={PERSONAL_INFO.cvPath} download>
-                <Download className="w-5 h-5" />
-                Download Resume
-              </GlowingButton>
-              
-              <div className="flex gap-4">
-                {socialLinks.map((link, index) => (
-                  <SocialLink key={index} link={link} />
-                ))}
-              </div>
-            </div>
+            <Link href="/about" className="pill pill-dark pill-lg mt-6">
+              More about me
+            </Link>
+
+            <h3 className="t-body mt-10 font-medium">Why clients work with me</h3>
+            <ul className="mt-3 space-y-3">
+              {REASONS.map((r) => (
+                <li key={r.title} className="t-body max-w-[46ch]">
+                  <span aria-hidden="true">→ </span>
+                  <strong className="font-medium">{r.title}</strong> {r.text}
+                </li>
+              ))}
+            </ul>
           </div>
-          
-          {/* Metrics Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {METRICS.map((metric, index) => (
-              <MetricCard key={index} metric={metric} index={index} />
-            ))}
-          </div>
-          
-          {/* Tech Stack Preview */}
-          <div className="text-center">
-            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-8">Technologies I Master</h3>
-            <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-              <div className="group px-6 py-3 bg-gradient-to-r from-blue-500/10 to-blue-600/10 dark:from-blue-500/20 dark:to-blue-600/20 border border-blue-400/20 dark:border-blue-400/30 text-blue-700 dark:text-blue-300 rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">React</span>
-              </div>
-              <div className="group px-6 py-3 bg-gradient-to-r from-purple-500/10 to-purple-600/10 dark:from-purple-500/20 dark:to-purple-600/20 border border-purple-400/20 dark:border-purple-400/30 text-purple-700 dark:text-purple-300 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">Next.js</span>
-              </div>
-              <div className="group px-6 py-3 bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 dark:from-emerald-500/20 dark:to-emerald-600/20 border border-emerald-400/20 dark:border-emerald-400/30 text-emerald-700 dark:text-emerald-300 rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">Vue.js</span>
-              </div>
-              <div className="group px-6 py-3 bg-gradient-to-r from-green-500/10 to-green-600/10 dark:from-green-500/20 dark:to-green-600/20 border border-green-400/20 dark:border-green-400/30 text-green-700 dark:text-green-300 rounded-full hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">Nuxt.js</span>
-              </div>
-              <div className="group px-6 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-600/10 dark:from-cyan-500/20 dark:to-cyan-600/20 border border-cyan-400/20 dark:border-cyan-400/30 text-cyan-700 dark:text-cyan-300 rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">Tailwind CSS</span>
-              </div>
-              <div className="group px-6 py-3 bg-gradient-to-r from-orange-500/10 to-orange-600/10 dark:from-orange-500/20 dark:to-orange-600/20 border border-orange-400/20 dark:border-orange-400/30 text-orange-700 dark:text-orange-300 rounded-full hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105">
-                <span className="font-medium">GSAP</span>
-              </div>
-            </div>
+
+          {/* Quiet utility surface holding a small stack of crops */}
+          <div className="relative min-h-[300px] overflow-hidden rounded-[20px] bg-paper md:min-h-[440px] lg:min-h-0">
+            {[
+              { id: 7, cls: "left-[6%] top-[8%] w-[62%] -rotate-[4deg]" },
+              { id: 11, cls: "right-[5%] top-[30%] w-[58%] rotate-[3deg]" },
+              { id: 9, cls: "left-[14%] bottom-[7%] w-[60%] -rotate-[1deg]" },
+            ].map(({ id, cls }) => {
+              const p = byId(id);
+              if (!p) return null;
+              return (
+                <div key={id} className={`absolute bg-canvas p-1.5 lg:p-2 ${cls}`}>
+                  <Image
+                    src={p.image}
+                    alt={`${p.title} website`}
+                    width={1350}
+                    height={630}
+                    sizes="(min-width: 1024px) 400px, 60vw"
+                    className="h-auto w-full"
+                  />
+                  <p className="mt-1.5 text-[10px] text-quiet lg:text-xs">{p.title}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* ---------- Experience (unboxed columns) ---------- */}
+      <section className="wrap section pt-0 md:pt-0 lg:pt-0">
+        <h2 className="t-small text-quiet">Experience &amp; education</h2>
+        <div className="mt-6 grid gap-8 md:grid-cols-3 lg:mt-8">
+          {[...EXPERIENCE, ...EDUCATION].map((item) => (
+            <div key={item.place}>
+              <p className="t-title">{item.role}</p>
+              <p className="t-body mt-1">{item.place}</p>
+              <p className="t-small mt-2 text-quiet">
+                {item.dates} · {item.type}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------- FAQ ---------- */}
+      <section className="wrap section pt-0 md:pt-0 lg:pt-8">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 className="t-display max-w-[11ch]">
+              Questions before we <span className="t-italic">start?</span>
+            </h2>
+            <p className="t-body mt-4 max-w-[38ch]">
+              The things people usually ask before we work together.
+            </p>
+            <Link href="/contact" className="pill pill-dark pill-lg mt-5">
+              Start a project
+            </Link>
+          </div>
+          <Faq items={FAQ} />
+        </div>
+      </section>
+    </>
   );
 }

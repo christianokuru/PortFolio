@@ -1,16 +1,34 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./components/theme-provider";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
+// Free stand-ins for the reference type: a light editorial serif and a clean sans
+const serif = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const sans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Okuru Christian's - Portfolio",
-  description: "This Porfolio contains my cv and my web dev experiences.",
-  icons:[ {rel:'icon', url: "/1.png", sizes: '512x512'},]
+  title: "Okuru Christian — Front-End Web Developer",
+  description:
+    "Portfolio of Okuru Christian, a front-end developer building fast, mobile-first websites with React, Next.js, Vue and Nuxt.",
+  icons: [{ rel: "icon", url: "/1.png", sizes: "512x512" }],
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -19,21 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="max-sm:px-0 max-sm:my-0 px-[60px]">
-          <Navbar />
-          </div>
-          <main className="container max-w-screen-2xl mx-auto">
-            {children}
-          </main>
-        </ThemeProvider>
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

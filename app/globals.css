@@ -2,68 +2,205 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Gallery-wall style.
+  White canvas, black ink, pale grey utility surfaces, one small green signal.
+  Mobile first: phone sizes are the defaults, larger screens scale up.
+*/
+
 @layer base {
   :root {
-    --background: 240 4.8% 95.9%;
-    --foreground: 20 14.3% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
+    /* Values used by the shadcn/ui primitives */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96.5%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96.5%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 0 0% 96.5%;
+    --accent-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
-    --primary: 240 3.7% 15.9%;
-    --primary-foreground: 60 9.1% 97.8%;
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 20 14.3% 4.1%;
-    --radius: 1rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --popover-foreground: 0 0% 0%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    --radius: 20px;
   }
 
-  .dark {
-    --background: 240 5.9% 10%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-    --primary: 240 5.9% 90%;
-    --primary-foreground: 24 9.8% 10%;
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  ::selection {
+    background: #000;
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* ---------- Type ---------- */
+
+  /* Hero statement: 40px phone → 80px desktop */
+  .t-hero {
+    @apply font-serif font-light text-[40px] leading-[0.95] tracking-[-0.035em];
+  }
+  @media (min-width: 768px) {
+    .t-hero {
+      @apply text-[60px];
+    }
+  }
+  @media (min-width: 1024px) {
+    .t-hero {
+      @apply text-[80px] leading-[0.92] tracking-[-0.045em];
+    }
+  }
+
+  /* Section statement: 32px phone → 62px desktop */
+  .t-display {
+    @apply font-serif font-light text-[32px] leading-[1] tracking-[-0.03em];
+  }
+  @media (min-width: 768px) {
+    .t-display {
+      @apply text-[46px];
+    }
+  }
+  @media (min-width: 1024px) {
+    .t-display {
+      @apply text-[62px] leading-[0.98] tracking-[-0.04em];
+    }
+  }
+
+  /* Italic splice for one word or phrase */
+  .t-italic {
+    @apply font-serif italic font-light;
+  }
+
+  /* Sans word inside a serif line (the "blunt" contrast) */
+  .t-sans-splice {
+    @apply font-sans font-normal tracking-[-0.04em];
+    font-size: 0.9em;
+  }
+
+  /* Supporting copy: kept small on phones so it never competes with headlines */
+  .t-body {
+    @apply text-[13px] leading-[1.55];
+  }
+  @media (min-width: 768px) {
+    .t-body {
+      @apply text-[15px];
+    }
+  }
+  @media (min-width: 1024px) {
+    .t-body {
+      @apply text-base leading-6;
+    }
+  }
+
+  .t-small {
+    @apply text-[11px] leading-[1.3];
+  }
+  @media (min-width: 768px) {
+    .t-small {
+      @apply text-[13px];
+    }
+  }
+
+  .t-title {
+    @apply text-[18px] leading-[1.3] tracking-[-0.01em];
+  }
+  @media (min-width: 1024px) {
+    .t-title {
+      @apply text-2xl leading-8;
+    }
+  }
+
+  /* ---------- Controls ---------- */
+
+  .pill {
+    @apply inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-[7px] text-[12px] leading-none transition-colors duration-200;
+  }
+  @media (min-width: 1024px) {
+    .pill {
+      @apply px-4 py-2 text-[13px];
+    }
+  }
+
+  .pill-dark {
+    @apply bg-ink text-white hover:bg-neutral-800;
+  }
+
+  .pill-soft {
+    @apply bg-paper text-ink hover:bg-neutral-200;
+  }
+
+  .pill-line {
+    @apply border border-line bg-canvas text-ink hover:bg-paper;
+  }
+
+  /* Taller conversion pill used beside intro copy */
+  .pill-lg {
+    @apply px-4 py-2.5 text-[13px];
+  }
+  @media (min-width: 1024px) {
+    .pill-lg {
+      @apply py-3 text-sm;
+    }
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-paper px-2.5 py-1.5 text-[11px] leading-none text-ink;
+  }
+  @media (min-width: 1024px) {
+    .tag {
+      @apply px-3 py-2 text-[13px];
+    }
+  }
+
+  .dot {
+    @apply inline-block h-[6px] w-[6px] shrink-0 rounded-full;
+  }
+
+  /* ---------- Layout ---------- */
+
+  .wrap {
+    @apply mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

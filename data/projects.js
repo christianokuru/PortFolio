@@ -46,7 +46,7 @@ export const projects = [
       "MOJODA FC is a forward-thinking grassroots football club dedicated to talent identification in rural areas, ensuring that every promising youngster—no matter their background—has the opportunity to shine.",
     links: {
       live: "https://www.mojodafc.com/",
-      github: "https://google.com",
+      github: "", // private repo
     },
     stack: ["Nuxt.js", "Vue.js", "Tailwind", "Figma"],
     category: "Football Club",
@@ -59,7 +59,7 @@ export const projects = [
       "A modern clothing e-commerce store offering trendy, high-quality fashion with a seamless shopping experience and stylish designs for every occasion.",
     links: {
       live: "https://hours-store.vercel.app/",
-      github: "https://google.com",
+      github: "", // private repo
     },
     stack: ["Nuxt.js", "Vue.js", "Tailwind", "Figma"],
     category: "Clothing E-commerce Store",
@@ -85,7 +85,7 @@ export const projects = [
       "Funiro is a sleek furniture site where style meets simplicity, offering modern pieces to make your space feel like home.",
     links: {
       live: "https://funiro-zeta.vercel.app/",
-      github: "https://google.com",
+      github: "", // private repo
     },
     stack: ["Vue.js", "Tailwind", "Figma"],
     category: "Funiture E-commerce Store",
@@ -98,7 +98,7 @@ export const projects = [
       "Crypgo is a sleek landing page for crypto enthusiasts, designed to showcase digital assets, market trends, and the future of decentralized finance in one place.",
     links: {
       live: "https://crypgo.vercel.app/",
-      github: "https://google.com",
+      github: "", // private repo
     },
     stack: ["Vue.js", "Tailwind", "Figma"],
     category: "Cryptocurrency",
@@ -111,7 +111,7 @@ export const projects = [
       "The UI/UX team created the design of this website. I designed the website utilizing the mobile first strategy, however it has no functionality or pages.",
     links: {
       live: "https://nextjs2-okuruchristian-gmailcoms-projects.vercel.app/",
-      github: "https://google.com",
+      github: "", // private repo
     },
     stack: ["Next.js", "Tailwind", "Figma"],
     category: "Web Design",
