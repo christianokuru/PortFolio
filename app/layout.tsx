@@ -52,6 +52,8 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: [{ rel: "icon", url: "/1.png", sizes: "512x512" }],
+  // Google Search Console ownership check
+  verification: { google: "D0g86W68cmXrvwBgvp-ypLCXx1Lr9G35zUqalM-Lnuw" },
 };
 
 export const viewport: Viewport = {
