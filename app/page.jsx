@@ -8,6 +8,7 @@ import Faq from "./components/Faq";
 
 // Collage tiles: unequal widths and heights, bottom-aligned like prints on a table
 const COLLAGE = [
+  { id: 12, w: "w-[230px] lg:w-[400px]", h: "h-[175px] lg:h-[300px]" },
   { id: 1, w: "w-[260px] lg:w-[420px]", h: "h-[150px] lg:h-[250px]" },
   { id: 4, w: "w-[200px] lg:w-[330px]", h: "h-[190px] lg:h-[320px]" },
   { id: 2, w: "w-[280px] lg:w-[470px]", h: "h-[140px] lg:h-[230px]" },
@@ -17,7 +18,7 @@ const COLLAGE = [
   { id: 5, w: "w-[260px] lg:w-[430px]", h: "h-[150px] lg:h-[240px]" },
 ];
 
-const PROOF = ["Kylva", "Mojoda FC", "BernodeHub", "Oats Collection", "Massive Barbecue"];
+const PROOF = ["Ochre", "Kylva", "Mojoda FC", "BernodeHub", "Oats Collection", "Massive Barbecue"];
 
 const PROMISES = [
   { label: "Mobile first", rot: "-rotate-[6deg]" },
@@ -37,6 +38,10 @@ const REASONS = [
     text: "I turn Figma files into responsive pages that match the design closely.",
   },
   {
+    title: "4+ years, 10+ websites.",
+    text: "Online stores, SaaS and brand sites, landing pages and more.",
+  },
+  {
     title: "Modern stack.",
     text: "React, Next.js, Vue and Nuxt with Tailwind CSS — fast to build, easy to grow.",
   },
@@ -45,7 +50,7 @@ const REASONS = [
 const byId = (id) => projects.find((p) => p.id === id);
 
 export default function Home() {
-  const featured = [1, 4, 2, 6, 3, 5].map(byId).filter(Boolean);
+  const featured = [12, 1, 4, 2, 6, 3].map(byId).filter(Boolean);
 
   return (
     <>
@@ -110,7 +115,7 @@ export default function Home() {
       {/* ---------- Proof row ---------- */}
       <section className="wrap section text-center">
         <p className="t-small mx-auto max-w-[36ch] md:max-w-none">
-          10+ websites shipped for stores, startups, clubs and creative brands.
+          4+ years and 10+ websites for stores, startups, clubs and creative brands.
         </p>
         <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 lg:mt-8 lg:gap-x-16">
           {PROOF.map((name, i) => (
@@ -184,7 +189,7 @@ export default function Home() {
           <div className="relative min-h-[300px] overflow-hidden rounded-[20px] bg-paper md:min-h-[440px] lg:min-h-0">
             {[
               { id: 7, cls: "left-[6%] top-[8%] w-[62%] -rotate-[4deg]" },
-              { id: 11, cls: "right-[5%] top-[30%] w-[58%] rotate-[3deg]" },
+              { id: 8, cls: "right-[5%] top-[30%] w-[58%] rotate-[3deg]" },
               { id: 9, cls: "left-[14%] bottom-[7%] w-[60%] -rotate-[1deg]" },
             ].map(({ id, cls }) => {
               const p = byId(id);

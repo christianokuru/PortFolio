@@ -10,7 +10,7 @@ export const metadata = {
 const INFO = [
   { label: "Name", value: PERSON.name },
   { label: "Role", value: PERSON.role },
-  { label: "Experience", value: "2+ years" },
+  { label: "Experience", value: "4+ years" },
   { label: "Based in", value: PERSON.location },
   { label: "Nationality", value: "Nigerian" },
   { label: "Language", value: "English" },

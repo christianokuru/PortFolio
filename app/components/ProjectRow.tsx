@@ -4,6 +4,8 @@ import Tag from "./Tag";
 type Project = {
   id: number;
   image: string;
+  width?: number;
+  height?: number;
   title: string;
   description: string;
   links: { live: string; github: string };
@@ -77,8 +79,8 @@ export default function ProjectRow({ project, index }: { project: Project; index
         <Image
           src={project.image}
           alt={`${project.title} website screenshot`}
-          width={1350}
-          height={630}
+          width={project.width ?? 1350}
+          height={project.height ?? 630}
           sizes="(min-width: 1024px) 52vw, (min-width: 768px) 78vw, 100vw"
           className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.015]"
         />

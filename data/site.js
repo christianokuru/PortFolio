@@ -96,7 +96,7 @@ export const FAQ = [
   },
   {
     q: "What kinds of websites have you built?",
-    a: "Online stores, brand and product sites, landing pages, a football club website and a 3D product viewer. You can see them all on the Work page.",
+    a: "Online stores, a SaaS landing page, brand and product sites, a football club website and a 3D product viewer. You can see them all on the Work page.",
   },
   {
     q: "How long does a website take?",

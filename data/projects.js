@@ -1,5 +1,20 @@
 export const projects = [
   {
+    id: 12,
+    image: "/projects/ochre.png",
+    width: 1440,
+    height: 900,
+    title: "Ochre",
+    description:
+      "A landing page for Ochre, a back office for independent studios that handles proposals, contracts and invoices in one place. Soft sunset gradients, live-feeling UI cards and an interactive proposal demo.",
+    links: {
+      live: "https://ochre-rose.vercel.app/",
+      github: "", // private repo
+    },
+    stack: ["Next.js", "Tailwind"],
+    category: "SaaS Landing Page",
+  },
+  {
     id: 1,
     image: "/projects/kylva.png",
     title: "Kylva",
@@ -128,18 +143,5 @@ export const projects = [
     },
     stack: ["Next.js", "Tailwind", "Shadcn"],
     category: "Portfolio",
-  },
-  {
-    id: 11,
-    image: "/projects/AtlaS.png",
-    title: "AtlaS E-commerce Site",
-    description:
-      "Atlas e-commerce site is for everyone who wants to step up their fashion game, featuring modern UI/UX and seamless shopping experience.",
-    links: {
-      live: "https://port-folio-two-nu.vercel.app",
-      github: "https://github.com/christianokuru/PortFolio",
-    },
-    stack: ["Next.js", "Tailwind", "Sanity.io", "Shadcn"],
-    category: "E-commerce",
   },
 ];
