@@ -28,7 +28,7 @@ export const NAV = [
 
 export const SOCIALS = [
   { name: "GitHub", href: "https://github.com/christianokuru" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/okuru-christian" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/christian-okuru-a883403a5" },
   { name: "X", href: "https://x.com/Dev_Chrisss" },
   { name: "Telegram", href: "https://t.me/Bitter_noodles" },
   { name: "WhatsApp", href: "https://wa.me/2349059952426" },
