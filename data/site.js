@@ -1,6 +1,14 @@
 // Single source for personal details used across the site.
 // Everything here comes from the previous version of the portfolio.
 
+// Public address of the site. Set NEXT_PUBLIC_SITE_URL if you move to a custom domain.
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://port-folio-two-nu.vercel.app"
+).replace(/\/$/, "");
+
+export const SITE_DESCRIPTION =
+  "Okuru Christian is a front-end web developer in Lagos, Nigeria, building fast, mobile-first websites and online stores with React, Next.js, Vue and Nuxt.";
+
 export const PERSON = {
   name: "Okuru Christian",
   role: "Front-End Web Developer",

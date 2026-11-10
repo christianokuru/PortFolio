@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { EDUCATION, EXPERIENCE, PERSON, SKILLS } from "@/data/site";
 import Tag from "../components/Tag";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "About — Okuru Christian",
-  description: "Front-end developer with a background in electrical engineering.",
-};
+export const metadata = pageMeta({
+  title: "About",
+  description:
+    "About Okuru Christian: front-end developer in Lagos with 4+ years of experience and a B.Eng in Electrical & Electronics Engineering. Skills, experience and contact details.",
+  path: "/about",
+});
 
 const INFO = [
   { label: "Name", value: PERSON.name },
