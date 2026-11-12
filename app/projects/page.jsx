@@ -55,15 +55,7 @@ export default function Projects() {
       </div>
 
       <div className="flex justify-center pt-6">
-        <a
-          href="https://github.com/christianokuru"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pill pill-soft pill-lg"
-        >
-          More on GitHub
-        </a>
-        <Link href="/contact" className="pill pill-dark pill-lg ml-2">
+        <Link href="/contact" className="pill pill-dark pill-lg">
           Start a project
         </Link>
       </div>

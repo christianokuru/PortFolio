@@ -43,6 +43,7 @@ export const TECH_DOTS = {
   Tailwind: "#38bdf8",
   "Tailwind CSS": "#38bdf8",
   GSAP: "#88ce02",
+  Lenis: "#ff98a2",
   Figma: "#f24e1e",
   Shadcn: "#7c3aed",
   ShadCn: "#7c3aed",
@@ -104,7 +105,7 @@ export const FAQ = [
   },
   {
     q: "What kinds of websites have you built?",
-    a: "Online stores, a SaaS landing page, brand and product sites, a restaurant site and a 3D product viewer. You can see them all on the Work page.",
+    a: "Online stores (including a luxury perfume shop), a SaaS landing page, brand and product sites, a restaurant site and a 3D product viewer. You can see them all on the Work page.",
   },
   {
     q: "How long does a website take?",

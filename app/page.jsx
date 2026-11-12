@@ -8,6 +8,7 @@ import Faq from "./components/Faq";
 
 // Collage tiles: unequal widths and heights, bottom-aligned like prints on a table
 const COLLAGE = [
+  { id: 13, w: "w-[240px] lg:w-[420px]", h: "h-[170px] lg:h-[290px]" },
   { id: 12, w: "w-[230px] lg:w-[400px]", h: "h-[175px] lg:h-[300px]" },
   { id: 1, w: "w-[260px] lg:w-[420px]", h: "h-[150px] lg:h-[250px]" },
   { id: 2, w: "w-[280px] lg:w-[470px]", h: "h-[140px] lg:h-[230px]" },
@@ -17,7 +18,7 @@ const COLLAGE = [
   { id: 5, w: "w-[260px] lg:w-[430px]", h: "h-[150px] lg:h-[240px]" },
 ];
 
-const PROOF = ["Ochre", "Kylva", "BernodeHub", "Oats Collection", "Massive Barbecue"];
+const PROOF = ["Perferm", "Ochre", "Kylva", "BernodeHub", "Oats Collection", "Massive Barbecue"];
 
 const PROMISES = [
   { label: "Mobile first", rot: "-rotate-[6deg]" },
@@ -49,7 +50,7 @@ const REASONS = [
 const byId = (id) => projects.find((p) => p.id === id);
 
 export default function Home() {
-  const featured = [12, 1, 2, 6, 3, 5].map(byId).filter(Boolean);
+  const featured = [13, 12, 1, 2, 6, 3].map(byId).filter(Boolean);
 
   return (
     <>

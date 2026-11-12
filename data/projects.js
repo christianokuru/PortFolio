@@ -1,5 +1,19 @@
 export const projects = [
   {
+    id: 13,
+    image: "/projects/perferm.png",
+    width: 1440,
+    height: 900,
+    title: "Perferm",
+    description:
+      "An online store for Perferm, a Lagos house of Arabian and niche luxury perfumes. Shop by collection or scent family, browse rich product pages and gift edits, with delivery across all 36 states of Nigeria.",
+    links: {
+      live: "https://perferm.vercel.app/",
+    },
+    stack: ["Next.js", "Tailwind", "Lenis"],
+    category: "Luxury Perfume E-commerce",
+  },
+  {
     id: 12,
     image: "/projects/ochre.png",
     width: 1440,
@@ -9,7 +23,6 @@ export const projects = [
       "A landing page for Ochre, a back office for independent studios that handles proposals, contracts and invoices in one place. Soft sunset gradients, live-feeling UI cards and an interactive proposal demo.",
     links: {
       live: "https://ochre-rose.vercel.app/",
-      github: "", // private repo
     },
     stack: ["Next.js", "Tailwind"],
     category: "SaaS Landing Page",
@@ -22,7 +35,6 @@ export const projects = [
       "A portfolio website that showcases Beauty and Cosmetics E-commerce websites to clients.",
     links: {
       live: "https://www.kylva.com/",
-      github: "https://github.com/christianokuru/Kylva",
     },
     stack: ["Nuxt.js", "Shadcn-Vue", "Tailwind"],
     category: "Beauty and Cosmetics E-commerce",
@@ -35,7 +47,6 @@ export const projects = [
       "A 3D Product Visualization website that showcases Photorealistic 3D models of products.",
     links: {
       live: "https://3d-product-vizualization.vercel.app/",
-      github: "https://github.com/christianokuru/3D-Product-Vizualization",
     },
     stack: ["Next.js", "ShadCn", "Tailwind"],
     category: "3D Product Visualization",
@@ -48,7 +59,6 @@ export const projects = [
       "We believe in the power of oats—a timeless ingredient celebrated for its soothing, protective, and restorative properties. Each product is carefully formulated to deliver visible results while respecting your skin's natural balance.",
     links: {
       live: "https://oats-collections.vercel.app/",
-      github: "https://github.com/christianokuru/Oats-Collections",
     },
     stack: ["Nuxt.js", "Vue.js", "Tailwind"],
     category: "Skincare",
@@ -61,7 +71,6 @@ export const projects = [
       "A modern clothing e-commerce store offering trendy, high-quality fashion with a seamless shopping experience and stylish designs for every occasion.",
     links: {
       live: "https://hours-store.vercel.app/",
-      github: "", // private repo
     },
     stack: ["Nuxt.js", "Vue.js", "Tailwind", "Figma"],
     category: "Clothing E-commerce Store",
@@ -74,7 +83,6 @@ export const projects = [
       "Massive Barbecue: Serving Lagos with the finest grilled delights! From tender chicken to succulent seafood, our expertly seasoned and smoky flavors guarantee a mouthwatering experience.",
     links: {
       live: "https://massive-barbecue.vercel.app/",
-      github: "https://github.com/christianokuru/massive-barbecue-vue",
     },
     stack: ["Vue.js", "Tailwind", "CSS", "Shadcn-Vue"],
     category: "Restaurant",
@@ -87,7 +95,6 @@ export const projects = [
       "Funiro is a sleek furniture site where style meets simplicity, offering modern pieces to make your space feel like home.",
     links: {
       live: "https://funiro-zeta.vercel.app/",
-      github: "", // private repo
     },
     stack: ["Vue.js", "Tailwind", "Figma"],
     category: "Funiture E-commerce Store",
@@ -100,7 +107,6 @@ export const projects = [
       "Crypgo is a sleek landing page for crypto enthusiasts, designed to showcase digital assets, market trends, and the future of decentralized finance in one place.",
     links: {
       live: "https://crypgo.vercel.app/",
-      github: "", // private repo
     },
     stack: ["Vue.js", "Tailwind", "Figma"],
     category: "Cryptocurrency",
@@ -113,7 +119,6 @@ export const projects = [
       "The UI/UX team created the design of this website. I designed the website utilizing the mobile first strategy, however it has no functionality or pages.",
     links: {
       live: "https://nextjs2-okuruchristian-gmailcoms-projects.vercel.app/",
-      github: "", // private repo
     },
     stack: ["Next.js", "Tailwind", "Figma"],
     category: "Web Design",
@@ -126,7 +131,6 @@ export const projects = [
       "This is my personal portfolio site showcasing my work and skills with modern design principles and smooth animations.",
     links: {
       live: "https://okuru-christian.vercel.app",
-      github: "https://github.com/christianokuru/PortFolio",
     },
     stack: ["Next.js", "Tailwind", "Shadcn"],
     category: "Portfolio",

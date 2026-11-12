@@ -8,7 +8,7 @@ type Project = {
   height?: number;
   title: string;
   description: string;
-  links: { live: string; github: string };
+  links: { live: string };
   stack: string[];
   category: string;
 };
@@ -55,16 +55,6 @@ export default function ProjectRow({ project, index }: { project: Project; index
             >
               <ArrowIcon /> Visit site
             </a>
-            {project.links.github ? (
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pill pill-soft pill-lg"
-              >
-                Code
-              </a>
-            ) : null}
           </div>
         </div>
       </div>
