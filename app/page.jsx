@@ -12,13 +12,13 @@ const COLLAGE = [
   { id: 12, w: "w-[230px] lg:w-[400px]", h: "h-[175px] lg:h-[300px]" },
   { id: 1, w: "w-[260px] lg:w-[420px]", h: "h-[150px] lg:h-[250px]" },
   { id: 2, w: "w-[280px] lg:w-[470px]", h: "h-[140px] lg:h-[230px]" },
-  { id: 6, w: "w-[210px] lg:w-[340px]", h: "h-[175px] lg:h-[290px]" },
+  { id: 14, w: "w-[210px] lg:w-[340px]", h: "h-[175px] lg:h-[290px]" },
   { id: 3, w: "w-[250px] lg:w-[400px]", h: "h-[155px] lg:h-[260px]" },
   { id: 8, w: "w-[200px] lg:w-[320px]", h: "h-[185px] lg:h-[300px]" },
   { id: 5, w: "w-[260px] lg:w-[430px]", h: "h-[150px] lg:h-[240px]" },
 ];
 
-const PROOF = ["Perferm", "Ochre", "Kylva", "BernodeHub", "Oats Collection", "Massive Barbecue"];
+const PROOF = ["Perferm", "Ochre", "Kylva", "BernodeHub", "Oats Collection", "Massive Barbeque"];
 
 const PROMISES = [
   { label: "Mobile first", rot: "-rotate-[6deg]" },
@@ -50,7 +50,7 @@ const REASONS = [
 const byId = (id) => projects.find((p) => p.id === id);
 
 export default function Home() {
-  const featured = [13, 12, 1, 2, 6, 3].map(byId).filter(Boolean);
+  const featured = [14, 13, 12, 1, 2, 3].map(byId).filter(Boolean);
 
   return (
     <>
