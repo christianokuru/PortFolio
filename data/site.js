@@ -54,6 +54,8 @@ export const TECH_DOTS = {
   CSS3: "#2965f1",
   JavaScript: "#e6c400",
   Git: "#f05032",
+  Postgres: "#336791",
+  Paystack: "#0ba4db",
 };
 
 export const CORE_STACK = ["Next.js", "React", "Vue.js", "Nuxt.js", "Tailwind CSS", "GSAP"];

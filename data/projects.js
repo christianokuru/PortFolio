@@ -1,5 +1,19 @@
 export const projects = [
   {
+    id: 14,
+    image: "/projects/massive-barbeque.png",
+    width: 1440,
+    height: 900,
+    title: "Massive Barbeque",
+    description:
+      "A full online ordering store for Massive Barbeque, a fire-grilled BBQ spot in Lagos. Customers order catfish, croaker, chicken and turkey, pay with Paystack, and watch their order update live from the grill to their door, with phone alerts. The owner runs orders, stock, coupons and repeat-customer insights from a custom admin dashboard.",
+    links: {
+      live: "https://www.massivebarbeque.com/",
+    },
+    stack: ["Next.js", "Tailwind", "Postgres", "Paystack"],
+    category: "Restaurant Ordering & E-commerce",
+  },
+  {
     id: 13,
     image: "/projects/perferm.png",
     width: 1440,
@@ -74,18 +88,6 @@ export const projects = [
     },
     stack: ["Nuxt.js", "Vue.js", "Tailwind", "Figma"],
     category: "Clothing E-commerce Store",
-  },
-  {
-    id: 6,
-    image: "/projects/massiveBarbecue.png",
-    title: "Massive Barbeque",
-    description:
-      "Massive Barbecue: Serving Lagos with the finest grilled delights! From tender chicken to succulent seafood, our expertly seasoned and smoky flavors guarantee a mouthwatering experience.",
-    links: {
-      live: "https://massive-barbecue.vercel.app/",
-    },
-    stack: ["Vue.js", "Tailwind", "CSS", "Shadcn-Vue"],
-    category: "Restaurant",
   },
   {
     id: 7,
