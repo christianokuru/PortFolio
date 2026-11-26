@@ -7,11 +7,11 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 export const SITE_DESCRIPTION =
-  "Okuru Christian is a front-end web developer in Lagos, Nigeria, building fast, mobile-first websites and online stores with React, Next.js, Vue and Nuxt.";
+  "Okuru Christian is a full-stack web developer in Lagos, Nigeria, building fast, mobile-first websites and online stores end to end with React, Next.js, Vue, Nuxt, Node.js and PostgreSQL.";
 
 export const PERSON = {
   name: "Okuru Christian",
-  role: "Front-End Web Developer",
+  role: "Full-Stack Web Developer",
   email: "okuruchristian@gmail.com",
   phone: "+234 905 995 2426",
   phoneHref: "tel:+2349059952426",
@@ -55,10 +55,12 @@ export const TECH_DOTS = {
   JavaScript: "#e6c400",
   Git: "#f05032",
   Postgres: "#336791",
+  PostgreSQL: "#336791",
+  "Node.js": "#5fa04e",
   Paystack: "#0ba4db",
 };
 
-export const CORE_STACK = ["Next.js", "React", "Vue.js", "Nuxt.js", "Tailwind CSS", "GSAP"];
+export const CORE_STACK = ["Next.js", "React", "Vue.js", "Nuxt.js", "Node.js", "PostgreSQL", "Tailwind CSS", "GSAP"];
 
 export const SKILLS = [
   "HTML5",
@@ -69,6 +71,8 @@ export const SKILLS = [
   "Vue.js",
   "Nuxt.js",
   "Tailwind CSS",
+  "Node.js",
+  "PostgreSQL",
   "Git",
 ];
 
@@ -99,7 +103,7 @@ export const EDUCATION = [
 export const FAQ = [
   {
     q: "What do you build with?",
-    a: "Mostly Next.js and React, or Vue and Nuxt, styled with Tailwind CSS. For motion I use GSAP. I pick the stack that suits your project, not the other way round.",
+    a: "Mostly Next.js and React, or Vue and Nuxt, styled with Tailwind CSS. For the back end (payments, databases, logins and admin dashboards) I use Node.js and PostgreSQL. For motion I use GSAP. I pick the stack that suits your project, not the other way round.",
   },
   {
     q: "Can you build from my Figma design?",

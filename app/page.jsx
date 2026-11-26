@@ -63,8 +63,9 @@ export default function Home() {
         </h1>
 
         <p className="t-body mt-5 max-w-[44ch] lg:mt-6">
-          I’m {PERSON.name}, a front-end developer. I build websites and online stores
-          with React, Next.js, Vue and Nuxt — mobile first, quick on every screen.
+          I’m {PERSON.name}, a full-stack developer. I build websites and online stores
+          end to end — fast, mobile-first pages plus the payments, databases and admin
+          dashboards behind them.
         </p>
 
         <div className="mt-5 flex flex-wrap gap-1.5 lg:mt-6">

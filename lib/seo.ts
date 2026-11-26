@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { SITE_DESCRIPTION } from "@/data/site";
 
 const SITE_NAME = "Okuru Christian";
-export const HOME_TITLE = "Okuru Christian — Front-End Web Developer in Lagos";
+export const HOME_TITLE = "Okuru Christian — Full-Stack Web Developer in Lagos";
 
 const OG_IMAGE = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Okuru Christian — Front-End Web Developer in Lagos",
+  alt: "Okuru Christian — Full-Stack Web Developer in Lagos",
 };
 
 // Complete page metadata: title, description, canonical link, and share cards.

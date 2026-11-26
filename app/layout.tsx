@@ -35,7 +35,9 @@ export const metadata: Metadata = {
   creator: PERSON.name,
   keywords: [
     "Okuru Christian",
+    "full-stack developer",
     "front-end developer",
+    "Node.js developer",
     "web developer Lagos",
     "web developer Nigeria",
     "Next.js developer",
@@ -81,7 +83,7 @@ const jsonLd = {
         addressLocality: "Lagos",
         addressCountry: "NG",
       },
-      knowsAbout: ["Web development", "Front-end development", ...SKILLS],
+      knowsAbout: ["Web development", "Full-stack development", "Front-end development", "Back-end development", ...SKILLS],
       sameAs: SOCIALS.filter((s) => !s.href.startsWith("https://wa.me")).map((s) => s.href),
     },
     {

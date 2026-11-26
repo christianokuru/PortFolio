@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Contact",
   description:
-    "Start a project with Okuru Christian, front-end web developer in Lagos. Send a message, email or call to talk about your website.",
+    "Start a project with Okuru Christian, full-stack web developer in Lagos. Send a message, email or call to talk about your website.",
   path: "/contact",
 });
 

@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "About",
   description:
-    "About Okuru Christian: front-end developer in Lagos with 4+ years of experience and a B.Eng in Electrical & Electronics Engineering. Skills, experience and contact details.",
+    "About Okuru Christian: full-stack developer in Lagos with 4+ years of experience and a B.Eng in Electrical & Electronics Engineering. Skills, experience and contact details.",
   path: "/about",
 });
 
@@ -55,7 +55,7 @@ export default function About() {
       <section className="wrap pt-10 md:pt-16 lg:pt-20">
         <p className="t-small text-quiet">About</p>
         <h1 className="t-hero mt-3 max-w-[15ch]">
-          A front-end developer with an <span className="t-italic">engineer’s</span> eye.
+          A full-stack developer with an <span className="t-italic">engineer’s</span> eye.
         </h1>
 
         <div className="mt-6 grid gap-5 lg:mt-10 lg:grid-cols-12">
