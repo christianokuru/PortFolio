@@ -52,7 +52,11 @@ export default function Footer() {
           ))}
         </div>
         <p className="t-small text-center">
-          Based in Lagos, working with clients worldwide.
+          Based in Lagos, working with clients worldwide. Founder of{" "}
+          <a href="https://kylva.com" target="_blank" rel="noopener" className="underline underline-offset-4">
+            Kylva
+          </a>
+          , custom online stores for fashion and beauty brands.
         </p>
         <a href={PERSON.cvPath} download className="pill pill-line">
           Download CV <span aria-hidden="true">+</span>

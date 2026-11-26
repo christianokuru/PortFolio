@@ -48,7 +48,7 @@ export const projects = [
     description:
       "A portfolio website that showcases Beauty and Cosmetics E-commerce websites to clients.",
     links: {
-      live: "https://www.kylva.com/",
+      live: "https://kylva.com/",
     },
     stack: ["Nuxt.js", "Shadcn-Vue", "Tailwind"],
     category: "Beauty and Cosmetics E-commerce",
